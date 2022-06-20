@@ -83,7 +83,8 @@ if(Products){
                 take: 100,
             }
         }).then(function(response) {
-            const advancedSearch=response.data.filter((index)=>index.creditSettingMonth.length>0) 
+            const advancedSearch=response.data
+            console.log(advancedSearch, 'advancedSearch catda');
             setProducts(advancedSearch);
          })
     }
@@ -113,7 +114,7 @@ else if(sortByPrice=='bahali'){
 }
 
 let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
- advancedSearch=advancedSearch.filter((index)=>index.creditSettingMonth.length>0)  
+ advancedSearch=advancedSearch
   setProducts(advancedSearch)
  }
  
