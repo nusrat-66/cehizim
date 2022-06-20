@@ -1,0 +1,43 @@
+@import '~zuck.js/dist/skins/snapgram.min.css';
+@import '~zuck.js/dist/zuck.min.css';
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+
+ 
+.stories.carousel .story {
+     max-width: 73px !important;
+ 
+}
+
+.stories.carousel .story>.item-link>.item-preview {
+    max-height: 73px !important;
+}
+.stories.snapgram .story > .item-link>.item-preview{
+background: linear-gradient(180deg, #b9ad7f 8%, #922c07 23%, #254732 41%, #196d79 57%, #6a8273 76%, #c8a058 91%) !important;
+}
+
+  .stories.snapgram .seen > .item-link>.item-preview{
+    background: linear-gradient(180deg, #e0e0e0, #e0e0e0) !important;
+    }

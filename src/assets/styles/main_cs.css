@@ -1,0 +1,114 @@
+.change-tab-crt {
+
+}
+.change-tab-crt ul li {
+    
+}
+.nav-link:hover + .dp-list {
+    display: block !important;
+}
+.wrong_input {
+    border: 1px solid red !important;
+}
+/* .activate-new-pswd {
+    display: block !important;
+} */
+/* .forgot-passwd-button-active {
+    display: block !important;
+} */
+.cs-element-disable {
+    display: none;
+}
+#erorr-page-text {
+    text-align: center;
+}
+.forgot-passwd-button {
+    width: 100%;
+}
+.lowno {
+    display: none;
+}
+.login-button-otp {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #114c55;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+}
+.log-out-btn {
+    background-color: transparent;
+    color: #da1b24;
+    display: flex;
+    height: 3.75rem;
+    padding: 0px 0.75rem;
+    align-items: center;
+    background-color: transparent;
+}
+.log-out-btn img {
+    margin-right: 12px;
+}
+
+
+.fltr-drpdown_block{
+    display: block;
+
+}
+
+
+.fltr-item-h_hover{
+    color: #b08a3e !important;
+}
+
+.muiSelect .muiSelect__select{
+    height: 40px ;
+    margin-right: 20px;
+    display: flex;
+    align-items: center ;
+ }
+
+
+ .muiSelect label{
+top: -7px;
+ }
+
+ .muiSelect .MuiBox-root{
+     min-width: 200px;
+ }
+ .paginateCustom {
+     display: flex ;
+     justify-content: flex-end;
+ margin-top: 40px;
+}
+
+ .paginateCustom ul{
+     list-style-type: none ;
+     display: flex ;
+     align-items: center;
+     text-decoration: none;
+ }
+
+ .paginateCustom a{
+ text-decoration: none;
+ font-size: 1rem ;
+cursor: pointer;
+color: rgba(52, 52, 52, 0.5); ;
+
+}
+.details-update_sp{
+    background: rgb(218 27 36 / 20%) !important;
+    color: red !important;
+}
+
+.paginateCustom li{
+    margin-right: 20px;
+     font-weight: 600;
+   }
+
+
+   .paginateCustom .selected a{
+  
+   color: black;
+   
+   }
