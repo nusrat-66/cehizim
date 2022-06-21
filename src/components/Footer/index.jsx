@@ -54,11 +54,11 @@ export default function Footer() {
                                     <div className="location">ünvan</div>
                                     <div className="phone-link">
                                         <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620be6a7a84d324595621ace_phone-icon.svg" loading="lazy" alt="" className="call-icon wh-24 gap-r-12" />
-                                        <a href={publicLinks.login} className="text-base">+994 (55) 200 19 11</a>
+                                        <a href="tel:+994552001911" rel="noopener noreferrer" className="text-base">+994 (55) 200 19 11</a>
                                     </div>
                                     <div className="email-link">
                                         <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620be6a7a84d3270fc621acf_mail-icon.svg" loading="lazy" alt="" className="email-icon wh-24 gap-r-12" />
-                                        <a href={publicLinks.login} className="text-base">info@cehizim.az</a>
+                                        <a href="mailto: info@cehizim.az" rel="noopener noreferrer" className="text-base">info@cehizim.az</a>
                                     </div>
                                 </div>
                             </div>
