@@ -19,7 +19,7 @@ import ReactPaginate from 'react-paginate';
 import Items from "../Product/Main/Items";
 
 import { useParams } from 'react-router-dom';
-  
+ 
 export default function ProductComp() {
 const params=useParams()
 
@@ -120,8 +120,7 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
  
  
  useEffect(() => {
- 
-    const timer = setTimeout(async () => {
+     const timer = setTimeout(async () => {
      await filter()
     }, 750);
   
@@ -242,7 +241,8 @@ setFilterCategory({
               
 
 <div className='paginateCustom'>
-  <ReactPaginate
+
+{currentItems && currentItems.length>0 && <ReactPaginate
   breakLabel="..."
   nextLabel={ <a   className="pag-right gap-l-24 w-inline-block">
   <img src={RightIcon} loading="lazy" alt="" className="wh-20" />
@@ -254,7 +254,7 @@ setFilterCategory({
   <img src={LeftIcon} loading="lazy" alt="" className="wh-20" />
 </a>}
   renderOnZeroPageCount={null}
-/>
+/>}
 
 </div>
  

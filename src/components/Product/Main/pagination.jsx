@@ -43,7 +43,7 @@ function PaginatedItems({ itemsPerPage }) {
 
       <Items currentItems={currentItems} />
 
-      <ReactPaginate
+      {currentItems && currentItems.length>0 && <ReactPaginate
         breakLabel="..."
         nextLabel="next >"
         onPageChange={handlePageClick}
@@ -51,7 +51,7 @@ function PaginatedItems({ itemsPerPage }) {
         pageCount={pageCount}
         previousLabel="< previous"
         renderOnZeroPageCount={null}
-      />
+      />}
     </>
   );
 }
