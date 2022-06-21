@@ -124,8 +124,7 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
   
 
   useEffect(() => {
- 
-  const timer = setTimeout(async () => {
+   const timer = setTimeout(async () => {
    await filter()
   }, 750);
 
@@ -166,7 +165,7 @@ setFilterCategory({
                         <Link to="/" className="text-link">Ana Səhİfə</Link>
                         <img src={ArrowIcon} loading="lazy" alt="" className="arrow-icon" />
                         <Link to="/mehsul" className="text-link">Endirimli məhsullar </Link>
-                
+               
                     </div>
                     <div className="filter">
  <div className='muiSelect'>
@@ -250,7 +249,7 @@ setFilterCategory({
               
 
 <div className='paginateCustom'>
-  <ReactPaginate
+{currentItems && currentItems.length>0 &&  <ReactPaginate
   breakLabel="..."
   nextLabel={ <a   className="pag-right gap-l-24 w-inline-block">
   <img src={RightIcon} loading="lazy" alt="" className="wh-20" />
@@ -262,7 +261,7 @@ setFilterCategory({
   <img src={LeftIcon} loading="lazy" alt="" className="wh-20" />
 </a>}
   renderOnZeroPageCount={null}
-/>
+/>}
 
 </div>
 

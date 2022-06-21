@@ -30,6 +30,7 @@ import Yeniler from "./Pages/yeniler"
 import ErrorPage from "./Pages/404"
 import Newest from "./components/Additional/Newest/index"
  import Privacy from "./components/privacy"
+ import Policy from "./components/policy"
 
 
 
@@ -125,7 +126,9 @@ useEffect(() => {
       <Route path="/yeniler/:id" element={<Yeniler/>} />
       <Route path="*" element={<ErrorPage/>} />
       <Route path="/testprp" element={<Newest/>} /> 
-      <Route path="/sertler" element={<Privacy/>} /> 
+      <Route path="/sertler" element={<Privacy/>} />
+      <Route path="/mexfilik" element={<Policy/>} />
+      <Route path="/istifadeci-razilasmasi" element={<Policy/>} />
     </Routes>
   </BrowserRouter>
    )

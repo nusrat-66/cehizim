@@ -83,7 +83,7 @@ if(Products){
               
 
 <div className='paginateCustom'>
-  <ReactPaginate
+{Products && <ReactPaginate
   breakLabel="..."
   nextLabel={ <a   className="pag-right gap-l-24 w-inline-block">
   <img src={RightIcon} loading="lazy" alt="" className="wh-20" />
@@ -95,7 +95,7 @@ if(Products){
   <img src={LeftIcon} loading="lazy" alt="" className="wh-20" />
 </a>}
   renderOnZeroPageCount={null}
-/>
+/>}
 
 </div>
 
