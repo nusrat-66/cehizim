@@ -12,6 +12,22 @@ import { deleteAll } from "../../redux/actions";
 import moment from "react-moment";
 var decode = require('decode-html');
 
+function AddZero(num) {
+    return (num >= 0 && num < 10) ? "0" + num : num + "";
+}
+
+export const NewDateForInput=()=> {
+    var now = new Date();
+    var strDateTime = 
+    now.getFullYear() + "-" +
+    AddZero(now.getMonth() + 1) + "-" +
+    now.getDate() + ("T") +
+    now.getHours() + ":" +
+    AddZero(now.getMinutes())
+   return strDateTime
+  }
+
+
 export default function CheckoutComp() {
  
 const navigate = useNavigate();  
@@ -112,12 +128,11 @@ const [musteriMelumatiForm, setMusteriMelumatiForm] = useState({
 
  if(dumProductsMonth.length>0){
       setMonthForSlider(dumProductsMonth)
-      setInstallement(dumProductsMonth[dumProductsMonth.length-1].label)
+      setInstallement(dumProductsMonth[0].label)
     }
    }, [buckets, paymantType])
    
-
-   
+    
 useEffect(async () => {
   if(customerId){
     const adresses=await agent.BucketRelated.getCustomerAddress(customerId)
@@ -151,9 +166,9 @@ if (monthForSlider.length>0) {
      setInstallement(slideValue)
   }
 }
-    const submitFuncion= async (e)=>{
-        console.log(shertler);
-        e.preventDefault()
+
+     const submitFuncion= async (e)=>{
+         e.preventDefault()
 if(shertler){
     const adressIdArray=[]
     const unvanAddObject={}
@@ -244,6 +259,8 @@ if(shertler){
 }, [Installement])
 
 
+
+
 const productPriceCalc=(product)=>{
     if(paymantType=="credit"){
        return  product.count * (product.price+(product.price*product.percent/100))
@@ -315,7 +332,7 @@ const productPriceCalc=(product)=>{
                                 </div>
                               })
                          }
-                                </div>
+                </div>
  {paymantType!="credit" &&
                         <div className="customer-info">
                         <div className="block-header">
@@ -397,27 +414,26 @@ const productPriceCalc=(product)=>{
                             </div>
                             <div className="w-commerce-commercecheckoutcolumn block-column">
                                 <label className="w-commerce-commercecheckoutlabel cs-label">Whatsapp zəngi üçün uyğun vaxt *</label>
-                                <input type="datetime-local"  min="2021-06-07T00:00" max="2018-06-14T00:00"  name="uygunGun" value={musteriMelumatiForm.uygunGun}  onChange={musteriMelumatChange} required className="w-commerce-commercecheckoutshippingcity dist-lb" />
+                                <input type="datetime-local"   min={NewDateForInput()}  name="uygunGun" value={musteriMelumatiForm.uygunGun}  onChange={musteriMelumatChange} required className="w-commerce-commercecheckoutshippingcity dist-lb" />
                             </div>
                           
                             </div>
                         </fieldset>
                         </div>
-
-
+ 
  }
    {products.length>0 && unvan.map((element)=><UnvanForm key={element} setUnvanForm={setUnvanForm} products={products} unvanForm={unvanForm} element={element} unvanIncrease={unvanIncrease} customerAdress={customerAdress} setProducts={setProducts} unvan={unvan} setUnvan={setUnvan} />
   )
  }
-
-                        </div>
-                    <div id="w-node-c75e0096-0b9f-d7e9-ced1-6ff80f248fb7-a834c1dd" className="check-right">
+                         </div>
+                     <div id="w-node-c75e0096-0b9f-d7e9-ced1-6ff80f248fb7-a834c1dd" className="check-right">
                     {monthForSlider.length> 1 &&  <div id="w-node-_0a34a7a5-f4d3-868b-8f10-dbd2dc2e45e5-a834c1dd" className="credit-calc">
                          <label className="w-commerce-commercecheckoutlabel month-label">Ay *</label>
+              
                            <Box sx={Slide}>
                                                 <Slider
                                                     aria-label="Restricted values"
-                                                    defaultValue={0}
+                                                    defaultValue={100}
                                                     valueLabelFormat={valueLabelFormat}
                                                     getAriaValueText={valuetext}
                                                     valueLabelDisplay="auto"

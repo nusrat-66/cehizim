@@ -7,7 +7,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import {NewDateForInput} from "./index"
  
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -53,21 +53,8 @@ function  UnvanForm({element, products, unvanForm, unvanIncrease, customerAdress
     const [adresSelected, setAdresSelected]=useState(false)
     const  selectRef=React.useRef()
     
-   
-    function AddZero(num) {
-      return (num >= 0 && num < 10) ? "0" + num : num + "";
-  }
-   
-  function NewDateForInput() {
-    var now = new Date();
-    var strDateTime = 
-    now.getFullYear() + "-" +
-    AddZero(now.getMonth() + 1) + "-" +
-    now.getDate() + ("T") +
-    now.getHours() + ":" +
-    AddZero(now.getMinutes())
-   return strDateTime
-  }
+ 
+ 
   
 
      useEffect(async () => {
