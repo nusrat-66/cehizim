@@ -38,7 +38,7 @@ useEffect(() => {
     const [filterCategory, setFilterCategory]=useState({type:true, payload:null});
     const [minPrice, setMinPrice]=useState(null)
     const [maxPrice, setMaxPrice]=useState(null)
-    const [ Products, setProducts ] = useState(false);
+    const [ Products, setProducts ] = useState([]);
     const [ rengFilter, setRengFilter ] = useState(null);
     const [ discountFilter, setDiscountFilter ] = useState(false);
     const [sortByPrice, setSortByPrice] = useState('');
@@ -154,9 +154,8 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
     return () => {
       clearTimeout(timer);
     };
-    }, [minPrice, maxPrice,filterCategory, sortByPrice, discountFilter, categories])
-console.log(Products, 'produtsss');
-    return(
+    }, [minPrice, maxPrice, filterCategory, sortByPrice, discountFilter, categories])
+     return(
            <div className="prdct-page-title wf-section">
             <div className="dv-wrapper">
                  <div className="filter-sec-dv">
@@ -178,7 +177,7 @@ console.log(Products, 'produtsss');
       </FormControl>
     </Box>
 </div>
-                         <div className="in-sale-block w-form">
+                          <div className="in-sale-block w-form">
                             <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get" className="sale-form">
                                  <FormGroup>
                                    <FormControlLabel control={<Checkbox onChange={(e)=>setDiscountFilter(e.target.checked)}  />} label="Endirimdə olan" />
@@ -242,6 +241,7 @@ console.log(Products, 'produtsss');
  
 
 <div className='paginateCustom'>
+{Products && Products.length>0 &&
   <ReactPaginate
   breakLabel="..."
   nextLabel={ <a  className="pag-right gap-l-24 w-inline-block">
@@ -254,13 +254,11 @@ console.log(Products, 'produtsss');
   <img src={LeftIcon} loading="lazy" alt="" className="wh-20" />
 </a>}
   renderOnZeroPageCount={null}
-/>
+/>}
 
 </div>
 
-
- 
-            </div>
+              </div>
         </div>
     );
 }

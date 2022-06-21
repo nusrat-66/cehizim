@@ -54,11 +54,11 @@ export default function Footer() {
                                     <div className="location">ünvan</div>
                                     <div className="phone-link">
                                         <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620be6a7a84d324595621ace_phone-icon.svg" loading="lazy" alt="" className="call-icon wh-24 gap-r-12" />
-                                        <a href={publicLinks.login} className="text-base">+994 (55) 200 19 11</a>
+                                        <a href="tel:+994552001911" rel="noopener noreferrer" className="text-base">+994 (55) 200 19 11</a>
                                     </div>
                                     <div className="email-link">
                                         <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620be6a7a84d3270fc621acf_mail-icon.svg" loading="lazy" alt="" className="email-icon wh-24 gap-r-12" />
-                                        <a href={publicLinks.login} className="text-base">info@cehizim.az</a>
+                                        <a href="mailto: info@cehizim.az" rel="noopener noreferrer" className="text-base">info@cehizim.az</a>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,9 @@ export default function Footer() {
                             <div id="w-node-_8b3e74bb-ebeb-6eb5-61ff-2297421ef3d0-421ef398" className="links">
                                 <div id="w-node-_8b3e74bb-ebeb-6eb5-61ff-2297421ef3d1-421ef398" className="links-heading">Keçİdlər</div>
                                 <div id="w-node-_8b3e74bb-ebeb-6eb5-61ff-2297421ef3d3-421ef398" className="w-layout-grid link-grid">
-                                    <a href={publicLinks.login} className="text-base">İstifadəçi razılaşması</a><a href={publicLinks.login} className="text-base">Məxfilik siyasəti</a><a href={publicLinks.login} className="text-base">Şərtlər &amp; qaydalar<br /></a>
+                                    <a href={"https://s3.us-west-2.amazonaws.com/secure.notion-static.com/080a760a-a243-49f9-84fb-44ff4a4da150/istifadci_srtlri.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220621%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220621T075144Z&X-Amz-Expires=86400&X-Amz-Signature=6e80b2a7728100173fac360db8b88b9af9478e41c87b00c1e28f847c5fd536c2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22istifad%25C9%2599c%25CC%25A7i%2520s%25CC%25A7%25C9%2599rtl%25C9%2599ri.pdf%22&x-id=GetObject"} target="_blank" className="text-base">İstifadəçi razılaşması</a>
+                                    <Link to={"/mexfilik"} className="text-base">Məxfilik siyasəti</Link>
+                                    <Link to={"/sertler"} className="text-base">Şərtlər &amp; qaydalar <br /></Link>
                                 </div>
                             </div>
                         </div>
