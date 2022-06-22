@@ -43,7 +43,7 @@ function App() {
       <CookieAppear />
       <CampaignMain />
       <CampaignDetailed />
-      <BlogLanding />
+      {/* <BlogLanding /> */}
       <SocialMediaLanding />
       <Footer />
     </div>

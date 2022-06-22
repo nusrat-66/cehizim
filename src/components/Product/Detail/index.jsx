@@ -151,13 +151,13 @@ export default function ProductDetailsComp() {
      useEffect(() => {
         let mockImageArr=[]
         if(ProductDetails?.imageUrl)
-        mockImageArr.push({image:"https://cdn.otomall.az/"+ProductDetails.imageUrl})
+        mockImageArr.push({image:"https://ferrumcapital.s3.eu-north-1.amazonaws.com"+ProductDetails.imageUrl})
         if(dinamicField?.image2)
-        mockImageArr.push({image:"https://cdn.otomall.az/"+dinamicField.image2})
+        mockImageArr.push({image:"https://ferrumcapital.s3.eu-north-1.amazonaws.com"+dinamicField.image2})
         if(dinamicField?.image3)
-        mockImageArr.push({image:"https://cdn.otomall.az/"+dinamicField.image3})
+        mockImageArr.push({image:"https://ferrumcapital.s3.eu-north-1.amazonaws.com"+dinamicField.image3})
          if(dinamicField?.image4)
-        mockImageArr.push({image:"https://cdn.otomall.az/"+dinamicField.image4})
+        mockImageArr.push({image:"https://ferrumcapital.s3.eu-north-1.amazonaws.com"+dinamicField.image4})
             setImages(mockImageArr)
     }, [dinamicField, params.mehsulId])
 

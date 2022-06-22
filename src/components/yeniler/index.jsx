@@ -11,8 +11,7 @@ import { useParams } from 'react-router-dom';
 export default function ProductComp() {
 const params=useParams()
  
-console.log(params, 'paramss');
-useEffect(() => {
+ useEffect(() => {
     window.scrollTo(0, 0)
  }, [params])
 const itemsPerPage=6
@@ -20,7 +19,6 @@ const itemsPerPage=6
  
    
     const [ Products, setProducts ] = useState(false);
-  
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
@@ -40,9 +38,7 @@ if(Products){
     }
  
      const getProducts=async ()=> {
-
-
-        const productResponse=await agent.CampaniyaRelated.getNewest(params.id)
+          const productResponse=await agent.CampaniyaRelated.getNewest(params.id)
               const  advancedSearch=productResponse.productDetails 
               setTitle(productResponse.title)
             setProducts(advancedSearch);
@@ -74,8 +70,7 @@ if(Products){
                     </div>
                 </div>
                 <div className="w-layout-grid sidebar-layout-grid sidebar-layout-grid__sp">
- 
-                    <div className="w-layout-grid right-side">
+                     <div className="w-layout-grid right-side">
                           <Items currentItems={currentItems} />
                     </div>
                 </div>
@@ -96,8 +91,7 @@ if(Products){
 </a>}
   renderOnZeroPageCount={null}
 />}
-
-</div>
+ </div>
 
 
 

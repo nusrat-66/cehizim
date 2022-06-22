@@ -42,7 +42,7 @@ export default function Register()
         const boxes = document.querySelectorAll('.regPasInit');
         var cleanNumber = inputPnumber.current.value.replace(/[^\w\s]/gi, '').replace(/_/g, '');
         setMobileText(cleanNumber)
-        if(PasswordFirst === PasswordSecond) {
+        if((PasswordFirst === PasswordSecond) && (PasswordFirst.length>7)) {
             setPreloader(true)
             axios({
                 method: 'post',
@@ -61,7 +61,7 @@ export default function Register()
             })
             .then(function (response) {
                 for (const box of boxes) {
-                    box.classList.remove('wrong_input'); //bunu usestate ile etmek lazimdir sabah yeni 21 aprel
+                    box.classList.remove('wrong_input'); 
                 }
                 if(response.data.hasError) {
                     alert(response.data.message);
@@ -162,13 +162,14 @@ export default function Register()
                         <div id="w-node-_6bc96a31-dd70-59cb-c7d8-f4aed82ea974-280f1e9c" className="register-block">
                             <div className="login-cont">
                                 <h3 className="login-heading">Qeydiyyat</h3>
+
                                 <div className="login-form w-form">
                                     <form className="login-form-cont" onSubmit={registerHandle}>
                                         <input type="text" className="reg-name w-input" maxLength={256} name="name" placeholder="Ad" required onChange={(e) => { setNameText(e.target.value); } } />
                                         <input type="text" className="reg-surname w-input" maxLength={256} name="surname" placeholder="Soyad" required onChange={(e) => { setSurNameText(e.target.value); } } />
                                         <InputMask className="reg-phone w-input" placeholder="Telefon nömrəsi" mask="+\9\94-99-999-99-99" ref={inputPnumber} required />
-                                        <input type="password" className="reg-pass w-input regPasInit" maxLength={256} name="password" placeholder="Şifrə" required onChange={(e) => { setPasswordFirst(e.target.value); } } />
-                                        <input type="password" className="reg-conf-pass w-input regPasInit" maxLength={256} name="confirmPassword" placeholder="Şifrəni təkrarla" required onChange={(e) => { setPasswordSecond(e.target.value); } } />
+                                        <input type="password" min={8} className="reg-pass w-input regPasInit" maxLength={256} name="password" placeholder="Şifrə" required onChange={(e) => { setPasswordFirst(e.target.value); } } />
+                                        <input type="password" min={8} className="reg-conf-pass w-input regPasInit" maxLength={256} name="confirmPassword" placeholder="Şifrəni təkrarla" required onChange={(e) => { setPasswordSecond(e.target.value); } } />
                                         <a className="istShertleri istShertleri__login" href="/sertler" target="_blank">İstifadəçi şərtləri</a>
                                         <div className="div-block-6">
                                             <label className="w-checkbox login-checkbox">

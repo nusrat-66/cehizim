@@ -13,6 +13,27 @@ import agent from '../../../api/agent';
 
 
 export default function CampaignsComp({campaigns, error}){
+
+     const priceTaker=(element)=>{
+        let percent;
+        let month;
+    element.creditSettingMonth.forEach(elem=>{
+        if(elem.month===12){
+            percent=elem.percent
+            month=12
+        }
+     })
+    if(!month){
+        percent=element?.creditSettingMonths[0]?.percent
+        month=element?.creditSettingMonths[0]?.month
+    }
+    
+    const price=element.price-(element.price*percent/100)
+    const MonthlyPrice= (element.price-(element.price*percent/100))/month
+    return {month , MonthlyPrice:MonthlyPrice.toFixed(0), price:price.toFixed(0)}
+    }
+
+
  const creditPriceTake=(object)=>{
     object.creditSettingMonths.forEach(element => {
         if(element.month===12){
@@ -20,7 +41,7 @@ export default function CampaignsComp({campaigns, error}){
         }
     });
 }
-
+console.log(campaigns, 'campaigns888');
 const params=useParams()
        useEffect(() => {
         window.scrollTo(0, 0)
@@ -31,13 +52,13 @@ const params=useParams()
             <div className="dv-wrapper">
                  <div className="w-layout-grid sidebar-layout-grid sidebar-layout-grid__sp">
                      <div className="w-layout-grid right-side">
-       {campaigns.map(campaign=> <div key={campaign.id} id="w-node-b159fb1f-b7ac-c1a6-dc13-725622bb6de8-22bb6de8" className="product-img">
+       {campaigns.map(campaign=>  <div key={campaign.id} id="w-node-b159fb1f-b7ac-c1a6-dc13-725622bb6de8-22bb6de8" className="product-img">
                             <div className="love-icon-badge">
                                 <img src={HeartIcon} loading="lazy" alt="" className="wh-20" /></div>
-                            <Link to="/mehsul/palma-desti" className="product-dv-img w-inline-block">
+                            <Link to={"/mehsul/"+campaign.productId} className="product-dv-img w-inline-block">
                                 <div className="prd-dv">
                                     <img
-                                        src={ExampleImg}
+                                        src={"https://ferrumcapital.s3.eu-north-1.amazonaws.com"+campaign.imageUrl}
                                         loading="lazy"
                                         sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 95vw, 467.0625px"
                                         alt=""
@@ -47,12 +68,12 @@ const params=useParams()
                             </Link>
                             <div className="product-heading">
                                 <h6 className="prd-title">{campaign.productName}</h6>
-                                <div className="total-price">{creditPriceTake(campaign)} ₼</div>
+                                <div className="total-price">{priceTaker(campaign).price} ₼</div>
                             </div>
                             <div className="prd-prc">
                                 <div className="month">
-                                    <div className="prd-month">12 ay</div>
-                                    <div className="prd-price">{(creditPriceTake(campaign)/12).toFixed()} ₼</div>
+                                    <div className="prd-month">{priceTaker(campaign).month} ay</div>
+                                    <div className="prd-price">{priceTaker(campaign).MonthlyPrice} ₼</div>
                                 </div>
                             </div>
                         </div>)               }

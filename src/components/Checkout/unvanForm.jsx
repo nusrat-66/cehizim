@@ -214,7 +214,7 @@ return (
       {customerAdress.length>0 && <select onChange={(e)=>unvanFormChangeFunc(e)} className="w-commerce-commercecheckoutshippingcountryselector city-lb" name={"addressId;"+(element-1)} id=""> 
       { customerAdress.map((customerAddress)=> <option key={customerAddress.id} value={customerAddress.id}>{customerAddress.address}</option>) }
        </select>}
-   {!adresSelected && <button className='btn__sp' onClick={resetCustomerAddress}>Adres elave et</button>}
+   {!adresSelected && <button className='btn__sp' onClick={resetCustomerAddress}>Ünvan əlavə et</button>}
        </div>
         <> 
 
@@ -257,7 +257,7 @@ return (
       <div className="w-commerce-commercecheckoutrow block-row">
         <div className="w-commerce-commercecheckoutcolumn block-column">
           <label className="w-commerce-commercecheckoutlabel cs-label import">Əlavə qeydlər</label>
-          <input value={unvanForm[element-1]['elaveMelumat']} onChange={(e)=>unvanFormChangeFunc(e)} type="text" name={"elaveMelumat;"+(element-1)} required className="w-commerce-commercecheckoutshippingcity notes-lb" />
+          <input value={unvanForm[element-1]['elaveMelumat']} onChange={(e)=>unvanFormChangeFunc(e)} type="text" name={"elaveMelumat;"+(element-1)} className="w-commerce-commercecheckoutshippingcity notes-lb" />
         </div>
       </div>
       </>

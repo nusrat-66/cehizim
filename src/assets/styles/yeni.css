@@ -96,7 +96,9 @@ margin-bottom: 20px;
 .muiSelect__cate .MuiOutlinedInput-input{
     padding: 4.5px 14px !important;
 }
-
+.stories.carousel .story>.item-link>.info{
+    display: none !important;
+}
 .privacy__text{
     margin-bottom: 10px;
 }
@@ -136,7 +138,18 @@ margin-bottom: 20px;
     align-items: center;
  }
 
+.relative{
+    position: relative;
+}
 
+.passEyeIcon{
+    position: absolute;
+    top: 43px;
+    width: 22px;
+    height: 22px;
+    right: 25px;
+    cursor: pointer;
+}
 @media screen and (max-width: 1290px) {
     .react-slider__ul li {
         width: 120px !important;

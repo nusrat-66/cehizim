@@ -1257,6 +1257,7 @@ color: green;
   .story {
     margin-top: 2rem;
     margin-bottom: 0rem;
+    margin-top: 19px;
   }
   
   .story-grid {
@@ -1909,6 +1910,7 @@ color: green;
     padding-top: 5rem;
     padding-bottom: 5rem;
     background-color: #f8f7f2;
+    padding-bottom: 1px;
   }
   
   .container-spc {
@@ -9103,6 +9105,9 @@ color: green;
     align-self: stretch;
     -ms-grid-column-align: stretch;
     justify-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   #w-node-_393f6ea9-ca5e-3433-b581-793138fa8ea6-64a99980 {

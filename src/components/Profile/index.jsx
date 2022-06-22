@@ -445,8 +445,7 @@ const ProfileComp = () => {
                 <div className="block-header">
                   <h4 className="checkout-heading">Şifrəni dəyiş</h4>
                 </div>
-
-                <ChangePassword />
+                 <ChangePassword />
               </div>
             </div>
             <div

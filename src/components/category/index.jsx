@@ -233,8 +233,7 @@ setFilterCategory({
                     </div>
                     
                     <div className="w-layout-grid right-side">
-                        
-                          <Items currentItems={currentItems} />
+                           <Items currentItems={currentItems} />
                     </div>
                 </div>
  

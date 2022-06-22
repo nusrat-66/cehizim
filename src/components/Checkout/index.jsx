@@ -4,13 +4,13 @@ import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
 import agent from "../../api/agent";
 import UnvanForm from "./unvanForm";
-import {addUnvanId} from "../../redux/actions"
 import { useDispatch } from "react-redux";
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
 import { deleteAll } from "../../redux/actions";
-import moment from "react-moment";
-var decode = require('decode-html');
+import InputMask from 'react-input-mask';
+
+ var decode = require('decode-html');
 
 function AddZero(num) {
     return (num >= 0 && num < 10) ? "0" + num : num + "";
@@ -29,7 +29,6 @@ export const NewDateForInput=()=> {
 
 
 export default function CheckoutComp() {
- 
 const navigate = useNavigate();  
 const {paymantType, buckets, loginReducer}=useSelector(state=>state)
 const userId=loginReducer.id
@@ -37,6 +36,15 @@ const {customerId}=loginReducer
 const [products, setProducts] = useState([])
 const [unvan, setUnvan] = useState([1])
 const dispatch=useDispatch()
+
+
+useEffect(() => {
+     setMusteriMelumatiForm({
+        ...musteriMelumatiForm, Ad:loginReducer.fullName.split(" ")[0], Soyad:loginReducer.fullName.split(" ")[1], Telefon:loginReducer.phoneNumber
+    })
+ }, [loginReducer])
+
+
 const [musteriMelumatiForm, setMusteriMelumatiForm] = useState({
     Telefon:"",
     Ad:"",
@@ -258,9 +266,7 @@ if(shertler){
       })
 }, [Installement])
 
-
-
-
+  
 const productPriceCalc=(product)=>{
     if(paymantType=="credit"){
        return  product.count * (product.price+(product.price*product.percent/100))
@@ -343,8 +349,8 @@ const productPriceCalc=(product)=>{
                             <div className="w-commerce-commercecheckoutrow block-row gap-b-16">
                             <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
                                 <label className="w-commerce-commercecheckoutlabel cs-label">Telefon *</label>
-                                <input  type="text" name="Telefon"  value={musteriMelumatiForm.Telefon} onChange={musteriMelumatChange} required className="w-commerce-commercecheckoutshippingcity dist-lb" />
-                            </div>
+                                <InputMask value={musteriMelumatiForm.Telefon} onChange={musteriMelumatChange} name="Telefon" className="form-log-inp w-input" placeholder="Telefon nömrəsi" mask="+\9\94-99-999-99-99" required />
+                             </div>
                             <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
                                 <label className="w-commerce-commercecheckoutlabel cs-label">Ad *</label>
                                 <input type="text" name="Ad" value={musteriMelumatiForm.Ad} onChange={musteriMelumatChange} required className="w-commerce-commercecheckoutshippingcity name-lb" />
@@ -372,6 +378,7 @@ const productPriceCalc=(product)=>{
                         </div>
 
 }
+ 
  {paymantType=="credit" &&
                          <div className="customer-info">
                         <div className="block-header">
@@ -382,7 +389,8 @@ const productPriceCalc=(product)=>{
                             <div className="w-commerce-commercecheckoutrow block-row gap-b-16">
                             <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
                                 <label className="w-commerce-commercecheckoutlabel cs-label">Telefon *</label>
-                                <input  type="text" name="Telefon" value={musteriMelumatiForm.Telefon} onChange={musteriMelumatChange} required className="w-commerce-commercecheckoutshippingcity dist-lb" />
+                                 <InputMask value={musteriMelumatiForm.Telefon} onChange={musteriMelumatChange} name="Telefon" className="form-log-inp w-input" placeholder="Telefon nömrəsi" mask="+\9\94-99-999-99-99" required />
+
                             </div>
                             <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
                                 <label className="w-commerce-commercecheckoutlabel cs-label">Ad *</label>
@@ -410,7 +418,7 @@ const productPriceCalc=(product)=>{
                             <div className="w-commerce-commercecheckoutrow block-row">
                             <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
                                 <label className="w-commerce-commercecheckoutlabel cs-label">Whatsapp nömrəsi*</label>
-                                <input type="tel"  name="Whatsapp" value={musteriMelumatiForm.Whatsapp} onChange={musteriMelumatChange} required className="w-commerce-commercecheckoutshippingcity dist-lb" />
+                                 <InputMask name="Whatsapp" value={musteriMelumatiForm.Whatsapp} onChange={musteriMelumatChange} className="form-log-inp w-input" placeholder="Telefon nömrəsi" mask="+\9\94-99-999-99-99" required />
                             </div>
                             <div className="w-commerce-commercecheckoutcolumn block-column">
                                 <label className="w-commerce-commercecheckoutlabel cs-label">Whatsapp zəngi üçün uyğun vaxt *</label>

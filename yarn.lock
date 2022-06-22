@@ -7603,6 +7603,11 @@
   "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
   "version" "3.2.0"
 
+"react-icons@^4.4.0":
+  "integrity" "sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.4.0.tgz"
+  "version" "4.4.0"
+
 "react-ig-feed@^1.0.4":
   "integrity" "sha512-XgPV3AAcZp9aZAr5w+EjWLsMdtrVHxyB0A7DPm5NeCkm5JocLvHQ0wKlafS6eg1mfo+2S6Dxj6YbwSgikpsrbw=="
   "resolved" "https://registry.npmjs.org/react-ig-feed/-/react-ig-feed-1.0.4.tgz"

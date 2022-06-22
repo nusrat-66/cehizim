@@ -47,7 +47,7 @@ export default function HeroSlider() {
 
         {HeroData &&
         HeroData.map((index, key) =>
-        <div className={`hero-slider wf-section ${key !== LastHeroCount && `disable-slide-element`} `} Style={`background-color: ${HeroData[key]?.rectangleColor } ;`}>
+        <div key={key} className={`hero-slider wf-section ${key !== LastHeroCount && `disable-slide-element`} `} Style={`background-color: ${HeroData[key]?.rectangleColor } ;`}>
             <div className="w-layout-grid hero-grid">
              {   <div id="w-node-bf980d3e-df69-3278-3bda-2a5fa6247eef-39a5ea85" className="hero-right bg-color" Style={`background-color: ${HeroData[key]?.rectangleColor};`}>
                     <div className="content-row">

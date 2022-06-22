@@ -81,8 +81,7 @@ return {month , MonthlyPrice:MonthlyPrice.toFixed(0), price:price.toFixed(0)}
                               {wishList.includes(element.productId) &&
                              <div onClick={()=>wishListDelete(element.productId)} className="love-icon-badge"><img src={redHeart} loading="lazy" alt="" className="wh-20" /></div>
                              }
-                             {console.log(element, 'element')}
-                                <Link to={`/mehsul/${element.productId}`} className="product-dv-img w-inline-block">
+                                 <Link to={`/mehsul/${element.productId}`} className="product-dv-img w-inline-block">
                                     <div className="prd-dv">
                                         <img
                                             src={`//cdn.otomall.az/${element.imageUrl}`}

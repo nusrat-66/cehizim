@@ -49,7 +49,7 @@ function CampaignMain() {
                             />
                         </div>
                     </Link>
-                    <Link id="w-node-_329df5ab-6f9a-c687-aa15-22ff975a695c-39a5ea85" to={"/kampaniya/"+campaignShortContext[2].id} className="right-campgn">
+                    <Link id="w-node-_329df5ab-6f9a-c687-aa15-22ff975a695c-39a5ea85" to={"/kampaniya/"+campaignShortContext[2]?.id} className="right-campgn">
                         <div className="right-2">
                             <img
                                 src={'https://cdn.otomall.az/'+campaignShortContext[2].imageUrl}

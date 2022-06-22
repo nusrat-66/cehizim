@@ -19,8 +19,7 @@ const [imageUrl, setImageUrl] = useState ()
 const [error, setError] = useState ()
 
 const params=useParams()
-
- useEffect(async () => {
+  useEffect(async () => {
     try{
 const campaignResponse = await agent.CampaniyaRelated.getCampaign(params.id)
  setCampaigns(campaignResponse)
@@ -31,11 +30,9 @@ if(campaignResponse[0]?.imageUrlHeadBanner)
 setImageUrl("https://cdn.otomall.az/"+campaignResponse[0]?.imageUrlHeadBanner)
 } catch(e){
      setError("Xəta baş verdi səhifəni yeniləyin")
-     
-}
+ }
 }, [])
-
-    return(
+     return(
         <>
         <Announce/>
         <Bucket />
@@ -43,7 +40,7 @@ setImageUrl("https://cdn.otomall.az/"+campaignResponse[0]?.imageUrlHeadBanner)
         <Navbar/>
         <div className="dropdown-overlay"></div>
         <NavigationBar/>
-        <CampaignBannerComp error={error} imageUrl={imageUrl} />
+        {/* <CampaignBannerComp error={error} imageUrl={imageUrl} /> */}
         <CampaignComp  campaigns={campaigns} />
         <CookieAppear/>
         <Footer/>

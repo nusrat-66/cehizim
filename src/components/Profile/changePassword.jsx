@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import agent from '../../api/agent'
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import Input from "./Input"
 function ChangePassword() {
 const [codes, setCodes]=useState({
     current:'',
@@ -31,9 +32,7 @@ if(codes.new!=codes.repeatNew){
     setError("")
 }
 
-
-
-
+ 
 const verifyResponse =await agent.ProfilRelated.loginVerify({
     "userName":phoneNumber,
     "password":codes.current
@@ -65,20 +64,15 @@ setTimeout(() => {
   return (
     <form onSubmit={onSubmit} className="w-commerce-commercecheckoutblockcontent block-content">
     <div className="w-commerce-commercecheckoutrow block-row">
-        <div className="w-commerce-commercecheckoutcolumn block-column">
-        <label className="w-commerce-commercecheckoutlabel cs-label">Cari şifrə </label>
-        <input value={codes.current} onChange={inputChange} type="password" name="current" required className="w-commerce-commercecheckoutshippingcity loc-lb" />
-        </div>
-    </div>
+ <Input name="current" type="password" value={codes.current} onChange={inputChange}/>
+     </div>
     <div className="w-commerce-commercecheckoutrow block-row">
-        <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
-        <label className="w-commerce-commercecheckoutlabel cs-label">Yeni şifrə</label>
-        <input value={codes.new} onChange={inputChange} type="password" name="new" required className="w-commerce-commercecheckoutshippingcity dist-lb" />
-        </div>
-        <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
-        <label className="w-commerce-commercecheckoutlabel cs-label">Təkrar Yeni şifrə</label>
-        <input value={codes.repeatNew} onChange={inputChange} type="password" name="repeatNew" required className="w-commerce-commercecheckoutshippingcity dist-lb" />
-        </div>
+    <Input name="new" type="password" value={codes.new} onChange={inputChange}/>
+
+   
+ 
+
+        <Input name="repeatNew" type="password" value={codes.repeatNew} onChange={inputChange}/>
     </div>
     <p className={success?'resetError resetError__success':'resetError'}>{error} {success}</p>
     <button href="#" className="save-button w-button w-100">YADDA&nbsp;SAXLA</button>
@@ -86,4 +80,4 @@ setTimeout(() => {
   )
 }
 
-export default ChangePassword
+export default ChangePassword;

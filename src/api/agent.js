@@ -145,7 +145,7 @@ relatedProducts: (body) => {
 
  const CampaniyaRelated = {
   getCampaign: (id) => {
- return  axios.get(`https://apis.digimall.az/api/Products/GetCampaignItemsByCampaignId?campaignId=${id}`,
+ return  axios.post(`https://apis.digimall.az/api/Queries/GetCampainItemWithCreditSeting`, {campainId:parseInt(id), count: 10 },
    {headers: { 'api-key': "620C471E-05CC-4D90-9817-B7A3EED57E1B"}})
  .then((responseBody=>{
       if(responseBody.status==200){
