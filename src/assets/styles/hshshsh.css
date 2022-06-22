@@ -2576,6 +2576,7 @@
     -ms-flex-pack: start;
     justify-content: flex-start;
     background-color: #f3f1e7;
+    width: max-content;
   }
   
   .campaign-banner-section {

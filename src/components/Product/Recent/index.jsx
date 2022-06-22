@@ -65,13 +65,10 @@ export default function RecentProduct() {
                         </div>
                     </Link>
                 </div>
- {
-    console.log(NewestData[0].productDetails, `NewestData[0].productDetails`)
- }
-                 <div className="w-layout-grid prd-grid campaign-cs-last">
+         <div className="w-layout-grid prd-grid campaign-cs-last">
                      {
                          NewestData[0].productDetails.map((element, index) =>{
-                       {  if(index<4)  return  <div className="product-img" key={index}>
+                       {  if(index<4)  return <div className="product-img" key={index}>
                                   { !wishList.includes(element.productId) &&
                              <div onClick={()=>wishListAdd(element.productId)} className="love-icon-badge"><img src={HeartIcon} loading="lazy" alt="" className="wh-20" /></div>
                              }

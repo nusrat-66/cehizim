@@ -2,10 +2,8 @@ import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import AddIcon from '../../../assets/images/add.svg';
 import HeartIcon from '../../../assets/images/heart.svg';
-import ExampleImg from '../../../assets/images/img-00122.png';
 import LeftIcon from '../../../assets/images/arrow-left.svg';
 import RightIcon from '../../../assets/images/arrow-right.svg';
-import ArrowIcon from '../../../assets/images/bc-arrow.svg';
 import { useParams } from "react-router-dom";
 import agent from '../../../api/agent';
 
@@ -41,8 +39,7 @@ export default function CampaignsComp({campaigns, error}){
         }
     });
 }
-console.log(campaigns, 'campaigns888');
-const params=useParams()
+ const params=useParams()
        useEffect(() => {
         window.scrollTo(0, 0)
      }, [params])
@@ -52,7 +49,7 @@ const params=useParams()
             <div className="dv-wrapper">
                  <div className="w-layout-grid sidebar-layout-grid sidebar-layout-grid__sp">
                      <div className="w-layout-grid right-side">
-       {campaigns.map(campaign=>  <div key={campaign.id} id="w-node-b159fb1f-b7ac-c1a6-dc13-725622bb6de8-22bb6de8" className="product-img">
+       {campaigns.map(campaign=> <div key={campaign.id} id="w-node-b159fb1f-b7ac-c1a6-dc13-725622bb6de8-22bb6de8" className="product-img">
                             <div className="love-icon-badge">
                                 <img src={HeartIcon} loading="lazy" alt="" className="wh-20" /></div>
                             <Link to={"/mehsul/"+campaign.productId} className="product-dv-img w-inline-block">

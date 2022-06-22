@@ -84,7 +84,7 @@ return {month , MonthlyPrice:MonthlyPrice.toFixed(0), price:price.toFixed(0)}
                                  <Link to={`/mehsul/${element.productId}`} className="product-dv-img w-inline-block">
                                     <div className="prd-dv">
                                         <img
-                                            src={`//cdn.otomall.az/${element.imageUrl}`}
+                                            src={`https://ferrumcapital.s3.eu-north-1.amazonaws.com${element.imageUrl}`}
                                             loading="lazy"
                                             alt=""
                                             className="product-image-h"

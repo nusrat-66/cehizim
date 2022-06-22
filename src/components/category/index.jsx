@@ -100,8 +100,8 @@ const filter= async ()=>{
         "languageId":19,
         "skip":0,
         "take":10000,
-        "catId":filterCategory.type?filterCategory.payload:null,
-        "catParentId":!filterCategory.type?filterCategory.payload:null,
+        "catId":!filterCategory.type?filterCategory.payload:null,
+        "catParentId":filterCategory.type?filterCategory.payload:null,
        }
 
 if(sortByPrice=='ucuz'){
@@ -161,7 +161,7 @@ setFilterCategory({
                         <img src={ArrowIcon} loading="lazy" alt="" className="arrow-icon" />
                         <a to="/mehsul" className="text-link">{catName} </a>
                       { subCatName && <img src={ArrowIcon} loading="lazy" alt="" className="arrow-icon" />}
-                        <a className="text-link">{subCatName} </a>
+                         <a className="text-link">{subCatName} </a>
                     </div>
                     <div className="filter">
  <div className='muiSelect muiSelect__cate'>

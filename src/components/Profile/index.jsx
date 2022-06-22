@@ -550,6 +550,7 @@ const ProfileComp = () => {
                           <div className="prds-order-list">
                             <div className="order-info-itm-lii">
                               <div className="product-img-block">
+                                
                                 <img
                                   src={"https://cdn.otomall.az/" + pr.imageUrl}
                                   loading="lazy"

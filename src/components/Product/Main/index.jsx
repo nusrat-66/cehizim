@@ -42,10 +42,6 @@ useEffect(() => {
     const [ rengFilter, setRengFilter ] = useState(null);
     const [ discountFilter, setDiscountFilter ] = useState(false);
     const [sortByPrice, setSortByPrice] = useState('');
-
- 
-
-
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
    
@@ -114,8 +110,8 @@ const filter= async ()=>{
         "languageId":19,
         "skip":0,
         "take":10000,
-        "catId":filterCategory.type?filterCategory.payload:null,
-        "catParentId":!filterCategory.type?filterCategory.payload:null,
+        "catId":!filterCategory.type?filterCategory.payload:null,
+        "catParentId":filterCategory.type?filterCategory.payload:null,
        }
 
 if(sortByPrice=='ucuz'){
@@ -233,8 +229,7 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
                             </div>
                         </div>
                     </div>
-                    
-                      <div className="w-layout-grid right-side">
+                       <div className="w-layout-grid right-side">
                           <Items currentItems={currentItems} />
                      </div>
                 </div>

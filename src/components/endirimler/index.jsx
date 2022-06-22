@@ -98,8 +98,8 @@ const filter= async ()=>{
         "languageId":19,
         "skip":0,
         "take":10000,
-        "catId":filterCategory.type?filterCategory.payload:null,
-        "catParentId":!filterCategory.type?filterCategory.payload:null,
+        "catId":!filterCategory.type?filterCategory.payload:null,
+        "catParentId":filterCategory.type?filterCategory.payload:null,
         "inSale":discountFilter?discountFilter.toString():null
        }
 
