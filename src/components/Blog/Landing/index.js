@@ -14,14 +14,14 @@ export default function BlogLanding() {
             }
           })
           .then(function (response) {
-              console.log(response.data);
-              setblogLanding(response.data)
-              console.log(response.data[0]["title"]);
-          })
+               setblogLanding(response.data)
+           })
           .catch(function (error) {
-            console.log(error);
-          });
+           });
     },[])
+
+
+    console.log(blogLanding, 'blogLanding');
         return(
             <>
             { blogLanding !== false ?
@@ -41,11 +41,11 @@ export default function BlogLanding() {
                             
                             <div className="beside-cont">
                                 <div className='beside-cont_oto'>
-                                <h2 className="blog-heading">{ decode(blogLanding[0]["title"]) }</h2>
-                                <div id="w-node-_5e7836f3-f5af-d564-3641-0b6cdf6fe349-39a5ea85" className="text-block" dangerouslySetInnerHTML={{__html: decode(blogLanding[0]["description"])}}>
+                                <h2 className="blog-heading">{decode(blogLanding[0]["title"]) }</h2>
+                           { blogLanding[0]["description"] && <div id="w-node-_5e7836f3-f5af-d564-3641-0b6cdf6fe349-39a5ea85" className="text-block" dangerouslySetInnerHTML={{__html: decode(blogLanding[0]["description"])}}>
+                                 </div>}
                                  </div>
-                                 </div>
-                                 <Link to={"/blog/"+blogLanding[0].id} className="btn-blog-area-2 w-inline-block">
+                                 <Link to={"/blog/"+blogLanding[0]['id']} className="btn-blog-area-2 w-inline-block">
                                     <div className="btn-slide-2">DAVAMI </div>
                                     <div className="btn-growing-div" />
                                 </Link>

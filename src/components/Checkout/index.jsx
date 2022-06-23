@@ -205,7 +205,7 @@ if(shertler){
                             'productName': product.title,
                             'providerId': product.providerId,
                             'providerName': product.providerName,
-                            'qty': +product.count,
+                            'qty':  +product.count,
                             'productPriceId': product.productPriceId,
                             'price': product.price,
                             'totalPrice': product.totalPrice,
@@ -216,31 +216,34 @@ if(shertler){
                             'deliveryTime': unvanAddObject[product.id].deliveryTime.split("T")[1],
                             'customerAddressId':  unvanAddObject[product.id].unvanId ? parseInt(unvanAddObject[product.id].unvanId):parseInt(adressIdArray[0])
               }})
+const badgetData={
+    'type': paymantType==="incash"? false:true,
+     customerId,
+    'name': musteriMelumatiForm.Ad,
+    'family': musteriMelumatiForm.Soyad,
+    'code':musteriMelumatiForm.FIN,
+    'idCardNumber': musteriMelumatiForm.Seriya,
+    'cellPhone': musteriMelumatiForm.Telefon,
+    'docDate':new Date().addHours(4),
+    'saleYear': 0,
+    'description': 'string',
+    'validity': 0,
+    'totalPrice': WholePrice,
+    'totalNetPrice': WholePrice,
+    'totalQty': products.length,
+    'totalDiscount': 0,
+    'discount': 0,
+    'cargoId': 0,
+    'currencyId': 0,
+     userId,
+     'callTime': musteriMelumatiForm.uygunGun.split("T")[1],
+     proformaDetails
+ }
 
-        const sebetbadget= await agent.BucketRelated.CreateNewProforma({
-            'type': paymantType=="incash"? false:true,
-             customerId,
-            'name': musteriMelumatiForm.Ad,
-            'family': musteriMelumatiForm.Soyad,
-            'code':musteriMelumatiForm.FIN,
-            'idCardNumber': musteriMelumatiForm.Seriya,
-            'cellPhone': musteriMelumatiForm.Telefon,
-            'docDate':new Date().addHours(4),
-            'saleYear': 0,
-            'description': 'string',
-            'validity': 0,
-            'totalPrice': WholePrice,
-            'totalNetPrice': WholePrice,
-            'totalQty': products.length,
-            'totalDiscount': 0,
-            'discount': 0,
-            'cargoId': 0,
-            'currencyId': 0,
-             userId,
-            'callDate':musteriMelumatiForm.uygunGun,
-            'callTime': musteriMelumatiForm.uygunGun.split("T")[1],
-             proformaDetails
-         })
+ if(paymantType!=="incash"){
+    badgetData['callDate']=musteriMelumatiForm.uygunGun
+ }
+        const sebetbadget= await agent.BucketRelated.CreateNewProforma(badgetData)
           if(sebetbadget.Message.includes("succesfully!")){
                Swal.fire({
                 title: 'Təbriklər sifarişiniz uğurla əlavə edildi!',
@@ -289,7 +292,7 @@ const productPriceCalc=(product)=>{
                                     <div className="item-block-list">
                                         <div className="order-itm-li">
                                         <div className="product-img-block">
-                                             <img src={"https://cdn.otomall.az/"+product.image} loading="lazy" sizes="(max-width: 479px) 20vw, 96px"  alt="" className="product-image" />
+                                             <img src={"https://ferrumcapital.s3.eu-north-1.amazonaws.com"+product.image} loading="lazy" sizes="(max-width: 479px) 20vw, 96px"  alt="" className="product-image" />
                                         </div>
                                         <div className="order-itm-dtls">
                                             <div className="order-itm-name">{product.title}</div>

@@ -103,8 +103,7 @@ useEffect(() => {
     }, [])
 
 const filter= async ()=>{
-
-    const sortObject={
+     const sortObject={
         "minPrice":minPrice,
         "maxPrice":maxPrice,
         "languageId":19,

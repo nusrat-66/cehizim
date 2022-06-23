@@ -11,8 +11,7 @@ import agent from '../../../api/agent';
 
 
 export default function CampaignsComp({campaigns, error}){
-
-     const priceTaker=(element)=>{
+      const priceTaker=(element)=>{
         let percent;
         let month;
     element.creditSettingMonth.forEach(elem=>{

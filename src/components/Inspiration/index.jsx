@@ -7,8 +7,8 @@ export default function InpirationComp()  {
         <div className="section wf-section">
             <div className="dv-wrapper">
                 <div className="insp-heading-box">
-                <div className="subtitle-ins">Pictures</div>
-                <h2 className="insp-headline">Latest Pictures on my Camera Roll</h2>
+                <div className="subtitle-ins">Şəkillər</div>
+                <h2 className="insp-headline">Sizdən gələnlər</h2>
                 </div>
                 <div className="insp-col">
                 <a href="/ilhamlanma" className="insp-div w-inline-block">

@@ -30,7 +30,7 @@ function closeWishModal() {
     <div  id="w-node-f10a1b06-03d3-c0d3-94aa-a20fe9af670e-39a5ea85" className="crt-items">
     <div className="product-img-block">
     <NavLink onClick={closeWishModal} to={`/mehsul/${id}`}>
-        <img src={"https://cdn.otomall.az//"+wishData.imageUrl} loading="lazy" alt="" className="product-image" />
+        <img src={"https://ferrumcapital.s3.eu-north-1.amazonaws.com"+wishData.imageUrl} loading="lazy" alt="" className="product-image" />
         </NavLink>
     </div>
     <div className="crt-item-details">

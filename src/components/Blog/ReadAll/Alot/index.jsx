@@ -32,7 +32,7 @@ export default function BlogAlot() {
                             blogDataAll.map((index, key) =>
                                 <a href={'/blog/' + index.id} className="blog-link w-inline-block" key={key}>
                                     <div className="blog-image-div">
-                                        <img src={'//cdn.otomall.az/' + index.imageUrl} loading="lazy" alt="" className="blog-image blog-image-cs" />
+                                        <img src={'https://ferrumcapital.s3.eu-north-1.amazonaws.com' + index.imageUrl} loading="lazy" alt="" className="blog-image blog-image-cs" />
                                     </div>
                                     <div className="date text-sm"><Moment format="DD MMM YYYY HH:mm" locale="az">{index.createAt}</Moment></div>
                                     <h3 className="blog-post-head">{index.title}</h3>

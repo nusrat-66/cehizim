@@ -170,7 +170,7 @@ const params=useParams()
                             </div>
                         </div>
                     </div>
- 
+  
                      <div className="w-layout-grid right-side">
  
                          {
@@ -185,7 +185,7 @@ const params=useParams()
                                 <Link to={"/mehsul/" + index.productId} className="product-dv-img w-inline-block">
                                     <div className="prd-dv">
                                         <img
-                                            src={"//cdn.otomall.az/" + index.imageUrl}
+                                            src={"https://ferrumcapital.s3.eu-north-1.amazonaws.com" + index.imageUrl}
                                             loading="lazy"alt=""
                                             className="product-image-h"
                                         />

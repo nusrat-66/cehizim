@@ -150,6 +150,27 @@ margin-bottom: 20px;
     right: 25px;
     cursor: pointer;
 }
+.accordion__drNav{
+    display: none;
+     transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+     width: 100%;
+     transform-style: preserve-3d;
+     display: block;
+     opacity: 1;
+     max-height: 0;
+ }
+
+ .accordion__drNav_open{
+      display: block;
+      animation-name: example1;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+ }
+
+ @keyframes example1 {
+    from {max-height:0 ;}
+    to {max-height: 500px;}
+  }
 @media screen and (max-width: 1290px) {
     .react-slider__ul li {
         width: 120px !important;

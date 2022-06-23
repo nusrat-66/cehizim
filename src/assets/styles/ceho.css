@@ -4832,6 +4832,7 @@ color: green;
     -ms-flex-direction: column;
     flex-direction: column;
     background-color: #fff;
+    top: 157px;
   }
   
   .profile-block {

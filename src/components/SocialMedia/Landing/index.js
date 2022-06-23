@@ -7,7 +7,7 @@ export default function SocialMediaLanding() {
         <div className="social-media wf-section">
             <div className="dv-wrapper">
                 <div id="w-node-_7b5ae974-a4c8-e4fc-5507-e353eb17cbe6-eb17cbe4" className="sc-text-center">
-                    <h2 id="w-node-_7b5ae974-a4c8-e4fc-5507-e353eb17cbe7-eb17cbe4" className="ins-heading">Məqsədli Dizayn, Rahat Yaşayış</h2>
+                    <h2 id="w-node-_7b5ae974-a4c8-e4fc-5507-e353eb17cbe7-eb17cbe4" className="ins-heading">Zövqlü Dizayn, Komfortlu Həyat</h2>
                     <a href="https://www.instagram.com/cehizimaz/" target="_blank" rel="noopener noreferrer" className="social__link gap-r-24 w-inline-block">@cehizimaz</a>
                 </div>
             </div>

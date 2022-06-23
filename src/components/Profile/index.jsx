@@ -321,7 +321,7 @@ const ProfileComp = () => {
                     <div className="w-commerce-commercecheckoutrow block-row gap-b-16">
                       <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
                         <label className="w-commerce-commercecheckoutlabel cs-labal-profile">
-                          Çatdırılma ünvanı{" "}
+                          Çatdırılma ünvanı {" "}
                         </label>
                         <label className="w-commerce-commercecheckoutlabel cs-placeholder">
                           {unvan.address}
@@ -552,7 +552,7 @@ const ProfileComp = () => {
                               <div className="product-img-block">
                                 
                                 <img
-                                  src={"https://cdn.otomall.az/" + pr.imageUrl}
+                                  src={"https://ferrumcapital.s3.eu-north-1.amazonaws.com" + pr.imageUrl}
                                   loading="lazy"
                                   alt=""
                                   className="product-image"

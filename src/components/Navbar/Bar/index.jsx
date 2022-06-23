@@ -71,7 +71,7 @@ export default function NavigationBar() {
                         <div className="right-row">
                             <div className="row-menu-dvr" />
                             <div className="inspiration">
-                                <Link to="/ilhamlanma" className="nav-link-insp insp">İlhamlanma</Link> <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620b7e25b9697492a1519018_line.svg" loading="lazy" alt="" className="insp-line" /> </div>
+                                <Link to="/ilhamlanma" className="nav-link-insp insp">İlhamlan</Link> <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620b7e25b9697492a1519018_line.svg" loading="lazy" alt="" className="insp-line" /> </div>
 
                             <Link to="/endirimler"  className="sale text-sm w-inline-block">
                                 <div className="sale-text">Endİrİmlər </div>

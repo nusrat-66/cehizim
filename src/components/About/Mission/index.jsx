@@ -11,7 +11,7 @@ export default function AboutMissionCOmp() {
                 <div id="w-node-_9deb3a11-5a5e-b509-fd72-4aa777059c5b-0ffe6132" data-w-id="9deb3a11-5a5e-b509-fd72-4aa777059c5b" className="our-mission">
                     <div className="miss-cont align-center">
                     <h2 id="w-node-_4f6a9e34-b965-ebfa-fc59-a4bed19e0295-0ffe6132" className="miss-head">Missiyamız</h2>
-                    <div id="w-node-_0ef19ee8-91e0-d17f-039d-13f3ff952b6a-0ffe6132" className="miss-desc">Geniş çeşid, qiymət üstünlüyü, rahat ödəniş şərtləri və asan xidmət vasitəsilə müştərilərimizin ehtiyaclarına asan çıxışı təmin etmək və nəticədə onlara evlərini və həyat tərzlərini yaxşılaşdırmaqda kömək etmək.</div>
+                    <div id="w-node-_0ef19ee8-91e0-d17f-039d-13f3ff952b6a-0ffe6132" className="miss-desc"> Geniş çeşid, qiymət üstünlüyü, rahat ödəniş şərtləri ilə müştərilərimizin ehtiyaclarını təmin etmək və nəticədə onlara evlərini və həyat tərzlərini yaxşılaşdırmaqda kömək etmək.  </div>
                     </div>
                 </div>
                 </div>

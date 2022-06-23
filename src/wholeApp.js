@@ -47,10 +47,7 @@ function WholeApp() {
        dispatch(takeWishlistFromStorage())
      }
     }, [])
- 
-
-
-
+  
 useEffect(() => {
   dispatch(getCategories())
  }, [])
@@ -88,8 +85,7 @@ useEffect(() => {
               })
           })
           .then(function (data) {
-
-              dispatch(login({
+               dispatch(login({
            id:loginDatas.id, phoneNumber: loginDatas.phoneNumber, customerId:data.data.id, fullname:`${loginDatas.name} ${loginDatas.surName}`
                 }))
  
@@ -124,11 +120,11 @@ useEffect(() => {
       <Route path="instagram" element={<Category/>} /> 
       <Route path="/endirimler" element={<Endirimler/>} /> 
       <Route path="/yeniler/:id" element={<Yeniler/>} />
-      <Route path="*" element={<ErrorPage/>} />
       <Route path="/testprp" element={<Newest/>} /> 
       <Route path="/sertler" element={<Privacy/>} />
       <Route path="/mexfilik" element={<Policy/>} />
       <Route path="/istifadeci-razilasmasi" element={<Policy/>} />
+      <Route path="*" element={<ErrorPage/>} />
     </Routes>
   </BrowserRouter>
    )

@@ -113,7 +113,7 @@ export default class OTPComp extends Component {
                 <div className="opt-w">
                     <div id="w-node-e5feec52-ba8b-d382-fd3c-2f24213f0398-51d2f875" className="otp-w-block" style={otpBody}>
                         <div className="otp-cont">
-                            <h3 className="opt-head">OTP kodu təsdiq edin</h3>
+                            <h3 className="opt-head">Təsdiq kodunu daxil edin</h3>
                             <div className="text-block-13">Mobil nömrəyə göndərilən kodu aşağıya daxil edin</div>
                             <div className="form-block w-form">
                                 <form onSubmit={submitNewPassword} style={newPasswordForm} id="newPasswordForm">

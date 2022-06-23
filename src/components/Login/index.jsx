@@ -69,7 +69,7 @@ export default function LoginComp() {
                     <div className="w-layout-grid login-reg-grid">
                         <div id="w-node-_3618a46a-152e-813d-cb71-26d481db7132-f060f113" className="login">
                             <div className="login-cont">
-                                <h3 className="login-heading">Hesabınız Var?</h3>
+                                <h3 className="login-heading">Mövcud hesaba daxil olun.</h3>
                                 <div className="login-form w-form">
                                     <form className="login-form-cont accessToLogin" onSubmit={submitLoginForm} id="LoginFormCehizim">
                                         <InputMask className="form-log-inp w-input" placeholder="Telefon nömrəsi" mask="+\9\94-99-999-99-99" ref={inputPnumber} required />
@@ -91,7 +91,7 @@ export default function LoginComp() {
                         <div id="w-node-df007092-57b6-acb1-93ab-83caf7c75f52-f060f113" className="reg">
                             <div className="reg-div">
                                 <h3 className="reg-heading">Hesab Yarat</h3>
-                                <div className="text-sm">İndi qeydiyyatdan keç və xüsusi endirimlərdən sən də yararlan.</div>
+                                <div className="text-sm">Yeniliklərdən xəbərdar olmaq və sifarişi izləmək üçün qeydiyyatdan keçin.</div>
                                 <Link to={publicLinks.register} className="reg-btn w-button">Qeydİyyatdan keçİn</Link>
                             </div>
                         </div>
