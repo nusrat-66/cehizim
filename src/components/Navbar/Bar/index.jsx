@@ -1,6 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {publicLinks} from '../../../App';
 import {Link} from 'react-router-dom';
+import dosek from "../../../assets/images/dosek.svg"
+import metbex from "../../../assets/images/metbex.svg"
+import qonaq from "../../../assets/images/qonaq.svg"
+import usaq from "../../../assets/images/usaq.svg"
+import yataq from "../../../assets/images/yataq.svg"
+import yumsaq from "../../../assets/images/yumsaq.svg"
+import dehliz from "../../../assets/images/dehliz.svg"
+
 const axios = require('axios');
 export default function NavigationBar() {
     const [catData, setCatData] = useState();
@@ -19,6 +27,34 @@ export default function NavigationBar() {
         });
     }, []);
     
+
+ const iconReturner=(clas)=>{
+if(clas=="yataq"){
+return yataq
+}
+if(clas=="qonaq"){
+    return qonaq
+    }
+    if(clas=="yumsaq"){
+        return yumsaq
+        }
+
+        if(clas=="usaq"){
+            return usaq
+            }
+
+            if(clas=="metbex"){
+                return metbex
+                }
+
+                if(clas=="dosekler"){
+                    return dosek
+                    }
+                    if(clas=="deliz"){
+                        return dehliz
+                        }
+ }
+
     return(
         <div className="nav-navigation mt-navbar">
             <div className="dv-nav-wrapper">
@@ -36,7 +72,7 @@ export default function NavigationBar() {
                                                     <div className="w-layout-grid dp-grid">
                                                         <div id="w-node-cbc0b599-b523-719d-7d8d-241bc5a2a70d-c5a2a701" className="dp-category">
                                                             <div className="dp-category-h">
-                                                                {/* <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620bf630df2e0f6fa4fb59e5_bedroom.svg" loading="lazy" alt="" className="wh-24 gap-l-12" /> */}
+                                                                <img src={iconReturner(index.icon)} loading="lazy" alt="" className="wh-24 gap-l-12" />
                                                             <Link style={{textDecoration:"none"}} to={`/category/cat-${index.id}`}>
                                                                 <a id="w-node-_82b95ddb-5cb1-07e9-499d-babad4a0eb72-c5a2a701"  className="text-sm uppr-sm f-w-600" tabIndex={0}>{index.name}</a>
                                                             </Link>
@@ -51,14 +87,14 @@ export default function NavigationBar() {
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                        <div className="w-layout-grid dp-grid-img">
+                                                        {/* <div className="w-layout-grid dp-grid-img">
                                                             <a href="" className="dp-product w-inline-block" tabIndex={0}>
                                                                 <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620bfea935b2441433ddd9e0_Chanel%20yataq%20d%C9%99sti.png" loading="lazy" alt="" className="dp-product-img" />
                                                             </a>
                                                             <a href="" className="dp-product w-inline-block" tabIndex={0}>
                                                                 <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620bfea935b2441433ddd9e0_Chanel%20yataq%20d%C9%99sti.png" loading="lazy" alt="" className="dp-product-img" />
                                                             </a>
-                                                        </div>
+                                                        </div> */}
                                                     </div>
                                                 </div>
                                             </nav>
