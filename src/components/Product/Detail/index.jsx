@@ -119,8 +119,7 @@ export default function ProductDetailsComp() {
                  if(creditSettings){
                      return
                 }
-                console.log('bura girmeli deyil');
-                 const monthArray=element.creditSetting.creditSettingMonth
+                  const monthArray=element.creditSetting.creditSettingMonth
                  const arrLength=monthArray.length ;
                 setPercent(monthArray[0]?.percent)
                 const monthArrayMock=monthArray.sort((a, b)=>a.month-b.month).map((mock, index)=>{
@@ -306,8 +305,7 @@ useEffect(async () => {
 }
 }, [ProductDetails, material, color])
 
-console.log(ProductDetails, 'clr');
-
+ 
      return (
      <>
      {ProductFullSTate !== false && percent ?

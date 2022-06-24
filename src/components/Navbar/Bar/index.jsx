@@ -35,7 +35,8 @@ export default function NavigationBar() {
                                                 <div className="dv-wrapper dp">
                                                     <div className="w-layout-grid dp-grid">
                                                         <div id="w-node-cbc0b599-b523-719d-7d8d-241bc5a2a70d-c5a2a701" className="dp-category">
-                                                            <div className="dp-category-h"><img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620bf630df2e0f6fa4fb59e5_bedroom.svg" loading="lazy" alt="" className="wh-24 gap-l-12" />
+                                                            <div className="dp-category-h">
+                                                                {/* <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620bf630df2e0f6fa4fb59e5_bedroom.svg" loading="lazy" alt="" className="wh-24 gap-l-12" /> */}
                                                             <Link style={{textDecoration:"none"}} to={`/category/cat-${index.id}`}>
                                                                 <a id="w-node-_82b95ddb-5cb1-07e9-499d-babad4a0eb72-c5a2a701"  className="text-sm uppr-sm f-w-600" tabIndex={0}>{index.name}</a>
                                                             </Link>

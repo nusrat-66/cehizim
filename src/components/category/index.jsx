@@ -84,8 +84,7 @@ if(Products){
             }
         }).then(function(response) {
             const advancedSearch=response.data
-            console.log(advancedSearch, 'advancedSearch catda');
-            setProducts(advancedSearch);
+             setProducts(advancedSearch);
          })
     }
     useEffect(() => {

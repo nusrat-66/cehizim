@@ -14,8 +14,7 @@ const params=useParams()
 
 const checkIfSubIn=(id, subs)=>{
   let returnValue=false
-  console.log(subs, 'subs555');
-  subs.forEach(element => {
+   subs.forEach(element => {
     if(element.id==id){
       returnValue=element.name
     }

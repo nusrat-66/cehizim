@@ -344,97 +344,14 @@ const ProfileComp = () => {
                       onClick={() => deleteUnvan(unvan.id, index)}
                       className="details-update details-update_delete w-button"
                     >
-                      MƏLUMATLARI&nbsp;SIL
+                     SIL
                     </a>
                     {/* <a onClick={()=>deleteUnvan(unvan.id)} className="details-update w-button details-update_sp">Sil</a> */}
                   </fieldset>
                 ))}
               </div>
-
-              {/* <div className="prof-infos">
-                <div className="block-header">
-                  <h4 className="checkout-heading">Mənim məlumatlarım</h4>
-                </div>
-                <fieldset className="w-commerce-commercecheckoutblockcontent block-content">
-                  <div className="w-commerce-commercecheckoutrow block-row gap-b-16">
-                    <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
-                      <label className="w-commerce-commercecheckoutlabel cs-label">
-                        Telefon
-                      </label>
-                      <input
-                        type="text"
-                        name="address_city"
-                        required
-                        className="w-commerce-commercecheckoutshippingcity dist-lb"
-                      />
-                    </div>
-                    <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
-                      <label className="w-commerce-commercecheckoutlabel cs-label">
-                        Ad
-                      </label>
-                      <input
-                        type="text"
-                        name="address_city"
-                        required
-                        className="w-commerce-commercecheckoutshippingcity name-lb"
-                      />
-                    </div>
-                    <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
-                      <label className="w-commerce-commercecheckoutlabel cs-label">
-                        Soyad
-                      </label>
-                      <input
-                        type="text"
-                        name="address_city"
-                        required
-                        className="w-commerce-commercecheckoutshippingcity last-lb"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-commerce-commercecheckoutrow block-row">
-                    <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
-                      <label className="w-commerce-commercecheckoutlabel cs-label">
-                        FIN 
-                      </label>
-                      <input
-                        type="text"
-                        name="address_city"
-                        required
-                    
-                        className="w-commerce-commercecheckoutshippingcity dist-lb"
-                      />
-                    </div>
-                    <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
-                      <label className="w-commerce-commercecheckoutlabel cs-label">
-                        Seriya nömrəsi
-                      </label>
-                      <input
-                        type="text"
-                        name="address_city"
-                        required
-                        className="w-commerce-commercecheckoutshippingcity dist-lb"
-                      />
-                    </div>
-                    <div className="w-commerce-commercecheckoutcolumn block-column gap-b-16">
-                      <label className="w-commerce-commercecheckoutlabel cs-label">
-                        Email
-                      </label>
-                      <input
-                        type="text"
-                        name="address_city"
-                        required
-                        className="w-commerce-commercecheckoutshippingcity dist-lb"
-                      />
-                    </div>
-                  </div>
-                  <a href="#" className="save-button w-button">
-                    YADDA&nbsp;SAXLA
-                  </a>
-                </fieldset>
-              </div> */}
-
-
-
+ 
+ 
               <div className="shipping">
                 <div className="block-header">
                   <h4 className="checkout-heading">Yeni Çatdırılma ünvanı </h4>
@@ -445,7 +362,7 @@ const ProfileComp = () => {
                 <div className="block-header">
                   <h4 className="checkout-heading">Şifrəni dəyiş</h4>
                 </div>
-                 <ChangePassword />
+                 <ChangePassword/>
               </div>
             </div>
             <div
@@ -637,7 +554,7 @@ const ProfileComp = () => {
                 </>
               )}
 
-              <div
+              {/* <div
                 className={
                   orderTab === "active"
                     ? "order-block-content"
@@ -647,8 +564,8 @@ const ProfileComp = () => {
                 <div className="order-info-list">
                   <div className="non-elem-denter">Məlumat yoxdur</div>
                 </div>
-              </div>
-              <div
+              </div> */}
+              {/* <div
                 className={
                   orderTab === "completed"
                     ? "order-block-content"
@@ -658,7 +575,7 @@ const ProfileComp = () => {
                 <div className="order-info-list">
                   <div className="non-elem-denter">Məlumat yoxdur</div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div data-w-tab="notifi" className={tab === "notifi" ? "w--tab-active" : "notifi-cont w-tab-pane"}>
               <div className="notifi-div">

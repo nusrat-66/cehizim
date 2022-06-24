@@ -15,14 +15,14 @@ const sortFunction= function(a, b) {
 }
 const submitEvent=async (e)=>{
     e.preventDefault()
-const form= e.target
+const form=e.target
     const data= {
         address: form.unvan.value,
         customerId,
         description:  form.qeydler.value,
         recordStatus:  0,
         regionId: form.address_city?.value? parseInt(form.address_city.value):parseInt(form.address_country.value),
-        userId 
+        userId
     }
     const submiteResponse=await agent.BucketRelated.postUserAdress(data)
    if(submiteResponse.Message.includes("succesfully!")){
@@ -37,8 +37,7 @@ setSuccessMessage('Müvəffəqiyyətlə əlavə olundu')
    }, 3000);
    }
 const selectChange= async(e)=>{
-    console.log(e.target.value, "e.target.value55");
-    if(e.target.value){
+     if(e.target.value){
   const regionResponse=await  agent.BucketRelated.getCities(e.target.value)
    setListRegionItems(regionResponse)
    return

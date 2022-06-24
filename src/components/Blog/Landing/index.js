@@ -21,8 +21,7 @@ export default function BlogLanding() {
     },[])
 
 
-    console.log(blogLanding, 'blogLanding');
-        return(
+         return(
             <>
             { blogLanding !== false ?
             <div className="blog wf-section">
@@ -30,7 +29,7 @@ export default function BlogLanding() {
                     <div className="w-layout-grid blog-grid-dv">
                         <div id="w-node-_6d8671ee-db82-cd4f-126d-a0ebd08881b5-39a5ea85" className="img-block">
                             <img
-                                src={ `//cdn.otomall.az/${blogLanding[0]["imageUrl"]}` }
+                                src={ `https://ferrumcapital.s3.eu-north-1.amazonaws.com${blogLanding[0]["imageUrl"]}` }
                                 loading="lazy"
                                 id="w-node-_268dd89a-8253-6a28-6c3b-f44f0bd2d79f-39a5ea85"
                                 alt=""
