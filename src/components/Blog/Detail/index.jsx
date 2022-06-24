@@ -40,7 +40,7 @@ export default function ReadBlogComp() {
                     </div>
                     <div className="article-image">
                         <img
-                        src={ `//cdn.otomall.az/${blogDetails["imageUrl"]}` }
+                        src={ `https://ferrumcapital.s3.eu-north-1.amazonaws.com${blogDetails["imageUrl"]}` }
                         loading="lazy"
                         alt={blogDetails.blogAdi} />
                     </div>

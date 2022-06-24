@@ -22,20 +22,17 @@ import { useParams } from 'react-router-dom';
  
 export default function ProductComp() {
 const params=useParams()
-
-
+ 
 useEffect(() => {
     window.scrollTo(0, 0)
  }, [params])
 const itemsPerPage=6
-     const dispatch=useDispatch()
- 
- 
+  
     const categories=useSelector((state)=>state.categorieReducer)
     const [filterCategory, setFilterCategory]=useState({type:true, payload:null});
     const [minPrice, setMinPrice]=useState(null)
     const [maxPrice, setMaxPrice]=useState(null)
-    const [ Products, setProducts ] = useState(false);
+    const [Products, setProducts ] = useState(false);
     const [rengFilter, setRengFilter ] = useState(null);
     const [discountFilter, setDiscountFilter ] = useState(false);
     const [sortByPrice, setSortByPrice] = useState('');
@@ -44,61 +41,70 @@ const itemsPerPage=6
     const [itemOffset, setItemOffset] = useState(0);
     const [catName, setCatName] = useState(null);
     const [subCatName, setSubCatName] = useState(null);
+    const [totalCount, setTotalCount] = useState(0);
+ 
+
+ 
 
 
 
-
-
-    useEffect(() => {
+    useEffect(async () => {
 if(Products){
-       const endOffset = itemOffset + itemsPerPage;
-       setCurrentItems(Products.slice(itemOffset, endOffset));
-       setPageCount(Math.ceil(Products.length / itemsPerPage));
+    const endOffset = itemOffset + itemsPerPage;
+        setCurrentItems(Products);
+        setPageCount(Math.ceil(totalCount / itemsPerPage));
  }
     }, [itemOffset, itemsPerPage, Products]);
-  
-     const handlePageClick = (event) => {
-      const newOffset = (event.selected * itemsPerPage) % Products.length;
+ 
+
+      const handlePageClick = (event) => {
+          const newOffset = (event.selected * itemsPerPage) % totalCount;
+          console.log(newOffset, 'as');
        setItemOffset(newOffset);
     }
-  
-    
 
-
+ 
     const handleChange = (event) => {
         setSortByPrice(event.target.value);
     };
   
-     
-    function getProducts() {
-        axios({
-            method: "POST",
-            baseURL: "https://apis.digimall.az/api/Queries/CehizimAdvanceSearch",
-            headers: {
-                'api-key': '620C471E-05CC-4D90-9817-B7A3EED57E1B' 
-            },
-            data: {
-                languageId: 19,
-                skip: 0,
-                take: 100,
-            }
-        }).then(function(response) {
-            const advancedSearch=response.data
-             setProducts(advancedSearch);
-         })
-    }
-    useEffect(() => {
+
+const advanceSearche=async ()=>{
+   const response=await axios({
+        method: "POST",
+        baseURL: "https://apis.digimall.az/api/Queries/CehizimAdvanceSearch",
+        headers: {
+            'api-key': '620C471E-05CC-4D90-9817-B7A3EED57E1B' 
+        },
+        data: {
+            languageId: 19,
+            skip:itemOffset,
+            take:6,
+        }
+    })
+        const advancedSearch=await response.data;
+          return advancedSearch
+ }
+
+    
+    async function getProducts(itemOffset, take=6) {
+        const advanceSearch=await advanceSearche()
+         setProducts(advanceSearch);
+console.log(advanceSearch, 'advanceSearch 777');
+         setTotalCount(advanceSearch[0].totalCount)
+     }
+
+     useEffect(() => {
         getProducts()
     }, [])
 
 const filter= async ()=>{
-
-    const sortObject={
+      const sortObject={
         "minPrice":minPrice,
         "maxPrice":maxPrice,
         "languageId":19,
-        "skip":0,
-        "take":10000,
+        "skip":itemOffset,
+        "take":6,
         "catId":!filterCategory.type?filterCategory.payload:null,
         "catParentId":filterCategory.type?filterCategory.payload:null,
        }
@@ -111,7 +117,7 @@ else if(sortByPrice=='bahali'){
     sortObject["sort"]="price"
     sortObject["direction"]=false
 }
-
+ 
 let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
  advancedSearch=advancedSearch
   setProducts(advancedSearch)
@@ -127,12 +133,10 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
       clearTimeout(timer);
     };
    
-   }, [minPrice, maxPrice,filterCategory, sortByPrice, discountFilter ])
- 
+   }, [minPrice, maxPrice,filterCategory, sortByPrice, discountFilter, itemOffset ])
+ console.log(itemOffset, 'itemOffset');
   useEffect(() => {
-
-
-if(params.cate){
+ if(params.cate){
   const type=params.cate.split("-")[0]
  const id=params.cate.split("-")[1]
   if(type=="cat"){
@@ -232,15 +236,14 @@ setFilterCategory({
                     </div>
 
                     <div className="w-layout-grid right-side">
-                           <Items currentItems={currentItems} />
+                            <Items currentItems={currentItems} />
                     </div>
                 </div>
  
               
 
 <div className='paginateCustom'>
-
-{currentItems && currentItems.length>0 && <ReactPaginate
+ {currentItems && currentItems.length>0 && <ReactPaginate
   breakLabel="..."
   nextLabel={ <a   className="pag-right gap-l-24 w-inline-block">
   <img src={RightIcon} loading="lazy" alt="" className="wh-20" />
@@ -248,15 +251,14 @@ setFilterCategory({
   onPageChange={handlePageClick}
   pageRangeDisplayed={5}
   pageCount={pageCount}
-  previousLabel={<a   className="pag-left gap-r-24 w-inline-block">
+  previousLabel={<a className="pag-left gap-r-24 w-inline-block">
   <img src={LeftIcon} loading="lazy" alt="" className="wh-20" />
 </a>}
   renderOnZeroPageCount={null}
 />}
 
 </div>
- 
-            </div>
+             </div>
         </div>
     );
 }

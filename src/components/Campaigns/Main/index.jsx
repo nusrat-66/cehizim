@@ -6,9 +6,7 @@ import LeftIcon from '../../../assets/images/arrow-left.svg';
 import RightIcon from '../../../assets/images/arrow-right.svg';
 import { useParams } from "react-router-dom";
 import agent from '../../../api/agent';
-
-
-
+  
 
 export default function CampaignsComp({campaigns, error}){
       const priceTaker=(element)=>{
@@ -30,9 +28,8 @@ export default function CampaignsComp({campaigns, error}){
     return {month , MonthlyPrice:MonthlyPrice.toFixed(0), price:price.toFixed(0)}
     }
 
-
- const creditPriceTake=(object)=>{
-    object.creditSettingMonths.forEach(element => {
+  const creditPriceTake=(object)=>{
+    object.creditSettingMonths.forEach(element =>{
         if(element.month===12){
              return object.price+((object.price*element.percent/100).toFixed(1))
         }

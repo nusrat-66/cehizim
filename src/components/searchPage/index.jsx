@@ -3,8 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import AddIcon from '../../assets/images/add.svg';
 import HeartIcon from '../../assets/images/heart.svg';
 import redHeart from "../../assets/images/redHeart.svg"
-import LeftIcon from '../../assets/images/arrow-left.svg';
-import RightIcon from '../../assets/images/arrow-right.svg';
 import ArrowIcon from '../../assets/images/bc-arrow.svg';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
@@ -121,10 +119,7 @@ const params=useParams()
                         </div>
                         <div className="filter-module">
                             <div className="fltr-area">
-
-
-
-                                <ul className="fltr-list">
+                                 <ul className="fltr-list">
                                     <li className="fltr-item">
                                         <div data-hover="false" data-delay="{0}" className="fltr-drp w-dropdown">
                                             <div className="fltr-toggle w-dropdown-toggle">
@@ -172,8 +167,7 @@ const params=useParams()
                     </div>
   
                      <div className="w-layout-grid right-side">
- 
-                         {
+                          {
                             Products ? Products.map((index, key) =>
                             <div id="w-node-b159fb1f-b7ac-c1a6-dc13-725622bb6de8-22bb6de8" className="product-img" key={key}>
                                { !wishList.includes(index.productId) &&

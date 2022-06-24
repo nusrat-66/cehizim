@@ -70,8 +70,9 @@ if(Products){
                     </div>
                 </div>
                 <div className="w-layout-grid sidebar-layout-grid sidebar-layout-grid__sp">
+                  
                      <div className="w-layout-grid right-side">
-                          <Items currentItems={currentItems} />
+                           <Items currentItems={currentItems} />
                     </div>
                 </div>
  

@@ -229,12 +229,10 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
                         </div>
                     </div>
                        <div className="w-layout-grid right-side">
-                          <Items currentItems={currentItems} />
+                           <Items currentItems={currentItems} />
                      </div>
                 </div>
- 
-
-<div className='paginateCustom'>
+ <div className='paginateCustom'>
 {Products && Products.length>0 &&
   <ReactPaginate
   breakLabel="..."
