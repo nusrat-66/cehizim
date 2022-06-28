@@ -66,10 +66,10 @@ export default function RecentProduct() {
                     </Link>
                 </div>
          <div className="w-layout-grid prd-grid campaign-cs-last">
-                     {
+                   {
                          NewestData[0].productDetails.map((element, index) =>{
-                       {  if(index<4)  return <div className="product-img" key={index}>
-                                  { !wishList.includes(element.productId) &&
+                       {  if(index < 4)  return <div className="product-img" key={index}>
+                                  {!wishList.includes(element.productId) &&
                              <div onClick={()=>wishListAdd(element.productId)} className="love-icon-badge"><img src={HeartIcon} loading="lazy" alt="" className="wh-20" /></div>
                              }
                            {wishList.includes(element.productId) &&
@@ -78,7 +78,7 @@ export default function RecentProduct() {
                                 <Link to={`/mehsul/${element.productId}`} className="product-dv-img w-inline-block">
                                     <div className="prd-dv">
                                         <img
-                                            src={`//cdn.otomall.az/${element.imageUrl}`}
+                                            src={`https://ferrumcapital.s3.eu-north-1.amazonaws.com${element.imageUrl}`}
                                             loading="lazy"
                                             alt=""
                                             className="product-image-h"

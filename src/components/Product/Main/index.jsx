@@ -46,110 +46,87 @@ useEffect(() => {
     const [pageCount, setPageCount] = useState(0);
    
     const [itemOffset, setItemOffset] = useState(0);
-  
-    useEffect(() => {
- if(typeof Products=="object"){
-       const endOffset = itemOffset + itemsPerPage;
-       setCurrentItems(Products.slice(itemOffset, endOffset));
-      setPageCount(Math.ceil(Products.length / itemsPerPage));
+    const [totalCount, setTotalCount] = useState(0);
 
-}
-    }, [itemOffset, itemsPerPage, Products]);
+    useEffect(async () => {
+        if(Products){
+            const endOffset = itemOffset + itemsPerPage;
+                setCurrentItems(Products);
+                setPageCount(Math.ceil(totalCount / itemsPerPage));
+         }
+            }, [itemOffset, itemsPerPage, Products]);
   
-     const handlePageClick = (event) => {
-      const newOffset = (event.selected * itemsPerPage) % Products.length;
-       setItemOffset(newOffset);
-    }
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % totalCount;
+      setItemOffset(newOffset);
+  }
   
     
      const handleChange = (event) => {
         setSortByPrice(event.target.value);
     };
-  
-     function getProducts() {
-        axios({
-            method: "POST",
-            baseURL: "https://apis.digimall.az/api/Queries/CehizimAdvanceSearch",
-            headers: {
-                'api-key': '620C471E-05CC-4D90-9817-B7A3EED57E1B' 
-            },
-            data: {
-                languageId: 19,
-                skip: 0,
-                take: 100,
-            }
-        }).then(function(response) {
-           const advancedSearch=response.data.map((index)=>{
-            const mock=index
-           if(index.creditSettingMonth.length>0){
-            return index;
-        }
-             else {
-                 categories.forEach((category)=>{
-                     if(category.id==index.catParentId){
-                        const mock=index
-                        mock.creditSettingMonth=category.creditSetting.creditSettingMonth
-                    }
-                })
-                return mock
-            }
-            }) 
 
-            setProducts(advancedSearch);
+
+    const advanceSearche=async ()=>{
+        const response=await axios({
+             method: "POST",
+             baseURL: "https://apis.digimall.az/api/Queries/CehizimAdvanceSearch",
+             headers: {
+                 'api-key': '620C471E-05CC-4D90-9817-B7A3EED57E1B' 
+             },
+             data: {
+                 languageId: 19,
+                 skip:itemOffset,
+                 take:6,
+             }
          })
-    }
+             const advancedSearch=await response.data;
+               return advancedSearch
+      }
+
+  
+      async function getProducts(itemOffset, take=6) {
+        const advanceSearch=await advanceSearche()
+         setProducts(advanceSearch);
+          setTotalCount(advanceSearch[0].totalCount)
+     }
     useEffect(() => {
         getProducts()
     }, [])
 
-const filter= async ()=>{
-     const sortObject={
-        "minPrice":minPrice,
-        "maxPrice":maxPrice,
-        "languageId":19,
-        "skip":0,
-        "take":10000,
-        "catId":!filterCategory.type?filterCategory.payload:null,
-        "catParentId":filterCategory.type?filterCategory.payload:null,
-       }
-
-if(sortByPrice=='ucuz'){
-    sortObject["sort"]="price"
-    sortObject["direction"]=true
-}
-else if(sortByPrice=='bahali'){
-    sortObject["sort"]="price"
-    sortObject["direction"]=false
-}
-
-let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
- advancedSearch=advancedSearch.map((index)=>{
-    const mock=index
-    if(index.creditSettingMonth.length>0){
-    return index;
-}
-     else {
-         categories.forEach((category)=>{
-             if(category.id==index.catParentId)  {
-                 const mock=index
-                 mock.creditSettingMonth=category.creditSetting.creditSettingMonth
-            }
-        })
-        return mock
-    }
-    }) 
-  setProducts(advancedSearch)
+    const filter= async ()=>{
+        const sortObject={
+          "minPrice":minPrice,
+          "maxPrice":maxPrice,
+          "languageId":19,
+          "skip":itemOffset,
+          "take":6,
+          "catId":!filterCategory.type?filterCategory.payload:null,
+          "catParentId":filterCategory.type?filterCategory.payload:null,
+         }
+  
+  if(sortByPrice=='ucuz'){
+      sortObject["sort"]="price"
+      sortObject["direction"]=true
   }
+  else if(sortByPrice=='bahali'){
+      sortObject["sort"]="price"
+      sortObject["direction"]=false
+  }
+   
+  let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
+   advancedSearch=advancedSearch
+    setProducts(advancedSearch)
+   }
   
  useEffect(() => {
      const timer = setTimeout(async () => {
      await filter()
     }, 750);
-  
-    return () => {
+     return () => {
       clearTimeout(timer);
     };
-    }, [minPrice, maxPrice, filterCategory, sortByPrice, discountFilter, categories])
+    }, [minPrice, maxPrice, filterCategory, sortByPrice, discountFilter, categories, itemOffset])
      return(
            <div className="prdct-page-title wf-section">
             <div className="dv-wrapper">
@@ -163,7 +140,7 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
  <div className='muiSelect'>
  <Box  sx=  {{ minWidth: 120  }}>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel htmlFor="grouped-native-select">Qiymətə görə </InputLabel>
+        <InputLabel htmlFor="grouped-native-select">Qiymətə görə  </InputLabel>
         <Select    value={sortByPrice} onChange={handleChange} native defaultValue="" id="grouped-native-select" label="Grouping">
           <option aria-label="None" value="" />
           <option value={"ucuz"}>Əvvəlcə ucuz</option>
@@ -229,7 +206,7 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
                         </div>
                     </div>
                        <div className="w-layout-grid right-side">
-                           <Items currentItems={currentItems} />
+                            <Items currentItems={currentItems} />
                      </div>
                 </div>
  <div className='paginateCustom'>

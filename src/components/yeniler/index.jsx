@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
- 
 import LeftIcon from '../../assets/images/arrow-left.svg';
 import RightIcon from '../../assets/images/arrow-right.svg';
 import ArrowIcon from '../../assets/images/bc-arrow.svg';
- import ReactPaginate from 'react-paginate';
+import ReactPaginate from 'react-paginate';
 import Items from "./items";
 import { useParams } from 'react-router-dom';
-  import agent from "../../api/agent"
+import agent from "../../api/agent";
 export default function ProductComp() {
 const params=useParams()
  
@@ -70,8 +69,8 @@ if(Products){
                     </div>
                 </div>
                 <div className="w-layout-grid sidebar-layout-grid sidebar-layout-grid__sp">
-                  
-                     <div className="w-layout-grid right-side">
+                      <div className="w-layout-grid right-side  right-side_4x">
+
                            <Items currentItems={currentItems} />
                     </div>
                 </div>

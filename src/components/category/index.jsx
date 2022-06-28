@@ -59,8 +59,7 @@ if(Products){
 
       const handlePageClick = (event) => {
           const newOffset = (event.selected * itemsPerPage) % totalCount;
-          console.log(newOffset, 'as');
-       setItemOffset(newOffset);
+        setItemOffset(newOffset);
     }
 
  
@@ -90,8 +89,7 @@ const advanceSearche=async ()=>{
     async function getProducts(itemOffset, take=6) {
         const advanceSearch=await advanceSearche()
          setProducts(advanceSearch);
-console.log(advanceSearch, 'advanceSearch 777');
-         setTotalCount(advanceSearch[0].totalCount)
+          setTotalCount(advanceSearch[0].totalCount)
      }
 
      useEffect(() => {
@@ -125,7 +123,7 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
  
  
  useEffect(() => {
-     const timer = setTimeout(async () => {
+      const timer = setTimeout(async () => {
      await filter()
     }, 750);
   
@@ -134,8 +132,7 @@ let advancedSearch=await agent.ProductRelated.advanceSearch(sortObject)
     };
    
    }, [minPrice, maxPrice,filterCategory, sortByPrice, discountFilter, itemOffset ])
- console.log(itemOffset, 'itemOffset');
-  useEffect(() => {
+   useEffect(() => {
  if(params.cate){
   const type=params.cate.split("-")[0]
  const id=params.cate.split("-")[1]
@@ -153,8 +150,7 @@ setFilterCategory({
 }
  }, [params.cate])
  
- 
-    return(
+     return(
            <div className="prdct-page-title wf-section">
             <div className="dv-wrapper">
                 <h1 className="product-title">Kateqoriyalar</h1>
@@ -170,7 +166,7 @@ setFilterCategory({
  <div className='muiSelect muiSelect__cate'>
 <Box  sx=  {{ minWidth: 120  }}>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel htmlFor="grouped-native-select">Qiymətə görə </InputLabel>
+        <InputLabel htmlFor="grouped-native-select">Qiymətə görə  </InputLabel>
         <Select    value={sortByPrice} onChange={handleChange} native defaultValue="" id="grouped-native-select" label="Grouping">
           <option aria-label="None" value="" />
           <option value={"ucuz"}>Əvvəlcə ucuz</option>
@@ -236,6 +232,7 @@ setFilterCategory({
                     </div>
 
                     <div className="w-layout-grid right-side">
+
                             <Items currentItems={currentItems} />
                     </div>
                 </div>

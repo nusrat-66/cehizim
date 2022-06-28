@@ -167,7 +167,7 @@ const params=useParams()
                     </div>
   
                      <div className="w-layout-grid right-side">
-                          {
+                           {
                             Products ? Products.map((index, key) =>
                             <div id="w-node-b159fb1f-b7ac-c1a6-dc13-725622bb6de8-22bb6de8" className="product-img" key={key}>
                                { !wishList.includes(index.productId) &&

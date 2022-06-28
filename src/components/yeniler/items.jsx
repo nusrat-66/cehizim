@@ -7,18 +7,28 @@ import HeartIcon from '../../assets/images/heart.svg';
 import redHeart from "../../assets/images/redHeart.svg";
 import { object } from 'yup'
 
+  
+const priceTaker=(element)=>{
+    let percent;
+    let month;
+element.creditSettingMonths.forEach(elem=>{
+    if(elem.month===12){
+        percent=elem.percent
+        month=12
+    }
+ })
+if(!month){
+    percent=element?.creditSettingMonths[0]?.percent
+    month=element?.creditSettingMonths[0]?.month
+}
 
- 
-const percentMaker=(object)=>{
-    //  const percentObject=object.creditSettingMonth.find((credit)=>{
-    //     if(credit.month==12){
-    //         return credit.percent
-    //     }
-    // })
-    const price=object.price
-    const percent=object.creditSettingPercentage
- return price+((price*percent)/100)
- }
+const price=element.price-(element.price*percent/100)
+const MonthlyPrice= (element.price-(element.price*percent/100))/month
+return {month , MonthlyPrice:MonthlyPrice.toFixed(0), price:price.toFixed(0)}
+}
+
+
+
 export function Items({ currentItems }) {
     const wishList=useSelector((state)=>state.wishList)
 
@@ -43,7 +53,7 @@ export function Items({ currentItems }) {
                              <Link to={"/mehsul/" + index.productId} className="product-dv-img w-inline-block">
                                  <div className="prd-dv">
                                      <img
-                                         src={"//cdn.otomall.az/" + index.imageUrl}
+                                         src={"https://ferrumcapital.s3.eu-north-1.amazonaws.com" + index.imageUrl}
                                          loading="lazy"alt=""
                                          className="product-image-h"
                                      />
@@ -51,12 +61,12 @@ export function Items({ currentItems }) {
                              </Link>
                              <div className="product-heading">
                                  <h6 className="prd-title">{index.productName}</h6>
-                                 <div className="total-price">{ percentMaker(index) } ₼</div>
+                                 <div className="total-price">{ priceTaker(index)['price'] } ₼</div>
                              </div>
                              <div className="prd-prc">
                                  <div className="month">
-                                     <div className="prd-month">{index.creditSettingMonth} ay</div>
-                                     <div className="prd-price">{(percentMaker(index)/index.creditSettingMonth).toFixed(2)}  ₼</div>
+                                     <div className="prd-month">{priceTaker(index)['month']} ay</div>
+                                     <div className="prd-price">{priceTaker(index)['MonthlyPrice']}  ₼</div>
                                  </div>
                              </div>
                          </div>}

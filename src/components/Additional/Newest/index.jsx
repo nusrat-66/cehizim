@@ -71,6 +71,7 @@ return {month , MonthlyPrice:MonthlyPrice.toFixed(0), price:price.toFixed(0)}
                     </Link>
                 </div>
                   <div className="w-layout-grid prd-grid campaign-cs-last">
+                    
                     {
                         index.productDetails.map((element, index) =>
                          {if(index<4){

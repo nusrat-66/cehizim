@@ -60,8 +60,7 @@ export default function ProductDetailsComp() {
     const [relateds, setRelateds] = useState([])
 
 
-
-
+ 
 
     useEffect(async() => {
         const {categoryId, id}=ProductDetails
