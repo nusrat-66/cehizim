@@ -27,12 +27,12 @@ if(campaignResponse.length===0){
    setError("Bu kampaniya müddəti bitib və ya məhsul mövcud deyil")
 }
 if(campaignResponse[0]?.imageUrlHeadBanner)
-setImageUrl("https://cdn.otomall.az/"+campaignResponse[0]?.imageUrlHeadBanner)
+setImageUrl("https://ferrumcapital.s3.eu-north-1.amazonaws.com"+campaignResponse[0]?.imageUrlHeadBanner)
 } catch(e){
      setError("Xəta baş verdi səhifəni yeniləyin")
  }
 }, [])
-     return(
+      return(
         <>
         <Announce/>
         <Bucket />
@@ -40,7 +40,7 @@ setImageUrl("https://cdn.otomall.az/"+campaignResponse[0]?.imageUrlHeadBanner)
         <Navbar/>
         <div className="dropdown-overlay"></div>
         <NavigationBar/>
-        {/* <CampaignBannerComp error={error} imageUrl={imageUrl} /> */}
+        <CampaignBannerComp error={error} imageUrl={imageUrl} />
         <CampaignComp  campaigns={campaigns} />
         <CookieAppear/>
         <Footer/>

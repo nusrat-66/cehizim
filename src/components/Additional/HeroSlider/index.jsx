@@ -59,7 +59,7 @@ export default function HeroSlider() {
                     </div>
                 </div>}
                 <img
-                    src={'https://cdn.otomall.az/' + HeroData[key].imageUrl}
+                    src={'https://ferrumcapital.s3.eu-north-1.amazonaws.com' + HeroData[key].imageUrl}
                     loading="lazy"
                     sizes="100vw"
                     id="w-node-abeb76eb-7d1a-400d-5d62-f2c117a903e3-39a5ea85"alt=""

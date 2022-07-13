@@ -73,7 +73,7 @@ export default function CampaignDetailed() {
                 <div className="w-layout-grid spc-banner" key={key}>
                     <div className="spc-1-dv">
                         <img
-                            src={'https://cdn.otomall.az/' + index.imageUrl}
+                            src={'https://ferrumcapital.s3.eu-north-1.amazonaws.com' + index.imageUrl}
                             loading="lazy"
                             width="{675}"
                             id="w-node-_8c6567e9-f24b-96a8-f949-77edcd07ad73-39a5ea85"

@@ -24,13 +24,12 @@ import jwt_decode from "jwt-decode";
 import axios from "axios"
 import SearchPage from "./Pages/searchPage"
 import Category from "./Pages/category"
-import INSTAPP from "./components/instagram"
 import Endirimler from "./Pages/endirimler"
 import Yeniler from "./Pages/yeniler"
 import ErrorPage from "./Pages/404"
 import Newest from "./components/Additional/Newest/index"
- import Privacy from "./components/privacy"
- import Policy from "./components/policy"
+import Privacy from "./components/privacy"
+import Policy from "./components/policy"
 
 
 

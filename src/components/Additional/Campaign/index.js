@@ -33,7 +33,7 @@ function CampaignMain() {
                 <div className="w-layout-grid campgn-grid">
                     <Link id="w-node-_84e87108-37e1-2c9f-b928-049210ad914b-39a5ea85" to={"/kampaniya/"+campaignShortContext[0].id} className="left-campgn w-inline-block">
                         <img
-                            src={'https://cdn.otomall.az/'+campaignShortContext[0].imageUrl}
+                            src={'https://ferrumcapital.s3.eu-north-1.amazonaws.com'+campaignShortContext[0]?.imageUrl}
                             loading="lazy"
                             alt=""
                             className="camp-img"
@@ -42,23 +42,23 @@ function CampaignMain() {
                     <Link id="w-node-_58c2bda3-7759-760d-9a8c-6d60b974a9ea-39a5ea85" to={"/kampaniya/"+campaignShortContext[1].id} className="right-campgn">
                         <div className="right-1">
                             <img
-                                src={'https://cdn.otomall.az/'+campaignShortContext[1].imageUrl}
+                                src={'https://ferrumcapital.s3.eu-north-1.amazonaws.com'+campaignShortContext[1]?.imageUrl}
                                 Style={"width: 100%; height: 100%; max-height: 203px;"}
                                 loading="lazy"
                                 alt=""
                             />
                         </div>
                     </Link>
-                    <Link id="w-node-_329df5ab-6f9a-c687-aa15-22ff975a695c-39a5ea85" to={"/kampaniya/"+campaignShortContext[2]?.id} className="right-campgn">
+               { campaignShortContext[2]?.imageUrl && <Link id="w-node-_329df5ab-6f9a-c687-aa15-22ff975a695c-39a5ea85" to={"/kampaniya/"+campaignShortContext[2]?.id} className="right-campgn">
                         <div className="right-2">
                             <img
-                                src={'https://cdn.otomall.az/'+campaignShortContext[2].imageUrl}
+                                src={'https://ferrumcapital.s3.eu-north-1.amazonaws.com'+campaignShortContext[2]?.imageUrl}
                                 Style={"width: 100%; height: 100%; max-height: 203px;"}
                                 loading="lazy"
                                 alt=""
                             />
                         </div>
-                    </Link>
+                    </Link>}
                 </div>
                 : <></>}
                  <Newest/>

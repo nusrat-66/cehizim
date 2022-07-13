@@ -17,20 +17,20 @@ export default function CampaignsAlotComp() {
         });
     }, [])
 
-
+console.log(campaignShortContext, 'campaignShortContext');
     
     return(
 <div className="campaign-list wf-section">
     <div className="dv-wrapper">
       <div className="w-layout-grid campaing-grid"> { campaignShortContext.map(camp=>{ if(camp.position==0){
         return <Link id="w-node-fd6d2081-98f7-117f-38b5-f9bb069c763a-a57ae80c" to={"/kampaniya/"+camp.id} className="left-campgn w-inline-block">
-          <img src={"https://cdn.otomall.az/"+camp.imageUrl} loading="lazy" sizes="100vw" alt="" className="left-ads-img" />
+          <img src={"https://ferrumcapital.s3.eu-north-1.amazonaws.com"+camp.imageUrl} loading="lazy" sizes="100vw" alt="" className="left-ads-img" />
         </Link> }
         else
         { return <div id="w-node-fd6d2081-98f7-117f-38b5-f9bb069c763c-a57ae80c" className="right-campgn">
           <div className="right-1">
           <Link to={"/kampaniya/"+camp.id}>
-          <img src={"https://cdn.otomall.az/"+camp.imageUrl} loading="lazy" sizes="100vw" alt="" />
+          <img src={"https://ferrumcapital.s3.eu-north-1.amazonaws.com"+camp.imageUrl} loading="lazy" sizes="100vw" alt="" />
           </Link>  
           </div>
         </div> } }) } 

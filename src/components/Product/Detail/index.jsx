@@ -91,8 +91,7 @@ export default function ProductDetailsComp() {
         }
         let creditSettings=null
           if(ProductDetails?.creditSettingMonthOnly){
-            console.log(ProductDetails?.creditSettingMonthOnly[0].creditSettingId, " => es ")
-            creditSettings = await agent.BucketRelated.getCreditSettingsById(ProductDetails?.creditSettingMonthOnly[0].creditSettingId)
+             creditSettings = await agent.BucketRelated.getCreditSettingsById(ProductDetails?.creditSettingMonthOnly[0].creditSettingId)
              setCreditSettingsForProduct(creditSettings)
         }
  
