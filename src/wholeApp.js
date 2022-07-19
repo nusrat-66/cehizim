@@ -30,6 +30,7 @@ import ErrorPage from "./Pages/404"
 import Newest from "./components/Additional/Newest/index"
 import Privacy from "./components/privacy"
 import Policy from "./components/policy"
+import Razilasma from "./Pages/razilasma"
 
 
 
@@ -102,6 +103,7 @@ useEffect(() => {
       <Route path="qeydiyyat" element={<Register />} />
       <Route path="sifremi-unutdum" element={<ForgotPassword />} />
       <Route path="otp" element={<Otp />} />
+      <Route path="/razilasma" element={<Razilasma />} />
       <Route path="profil" element={<Profile/>} />
       <Route path="mehsul" element={<Product />} />
       <Route path="mehsul/:mehsulId" element={<ProductDetails />} />

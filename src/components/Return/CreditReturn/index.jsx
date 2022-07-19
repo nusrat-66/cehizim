@@ -13,7 +13,12 @@ export default function CreditReturnComp() {
 
 
                 <FaqDropdown title={"Zəmanət və qaytarılma şərtləri"}>
-                <p> Azərbaycan Respublikasının 20 yaşdan yuxarı vətəndaşları tək şəxsiyyət vəsiqəsi ilə rəsmi iş yeri tələbi olmadan və rahat şərtlərlə istənilən mebeli hissə-hissə ödənişlə əldə edə bilərlər. <br />Hissəli ödənişin verilmə prosesi bütövlükdə onlayn şəkildə həyata keçirilir. Sizə internetə giriş və video zəngə qoşulmaq üçün kameralı telefon lazım olacaq. <br /> Hissəli ödəniş müraciəti üçün tək şəxsiyyət vəsiqəsi kifayətdir. <br />Hissəli ödəniş rəsmiləşdikdə müştəri heç bir yerə yaxınlaşmır, online sənədləşmə prosesi (imzalanma) həyata keçirilir <br />  Sifariş qeydə alındıqdan sonra,Faktorinq mütəxəssisləri əlaqə saxlayaraq sizə hissəli ödəniş barədə ətraflı məlumat təqdim edəcək. Kredit ayrıla bilindiyi halda, yalnız siz təsdiqlədikdən sonra sifariş aktivləşəcək.   <br />   Bu bölmədə qeyd olunan məlumatlar Azərbaycan Respublikasının “İstehlakçıların hüquqlarının müdafiəsi haqqında” qanunun müvafiq bəndlərinə əsasən hazırlanmışdır.  <br/> Cehizim.az mebel şirkətindən alınmış məhsulun xüsusiyyətləri istehlakçının tələblərini ödəmədiyi təqdirdə, aşağıdakı hallarda həmin məhsulun tələb olunan xüsusiyyətlərə uyğun olan məhsula, alınma günü sayılmamaq şərti ilə 14 gün ərzində dəyişdirə bilər <br /> Əldə edilmiş məhsul istifadə olunmayıbsa və onun əmtəə görünüşü, istehlak xassələri, qablaşdırması, kassa qəbzi və ya sözügedən malın dəyərinin ödənilməsini təsdiq edən digər sənəd saxlanıbsa məhsul qaytarıla bilər. </p>
+                <p> Cehizim.az-dan alınmış məhsulun xüsusiyyətləri istehlakçının tələblərini ödəmədiyi təqdirdə, aşağıdakı hallarda həmin məhsulun tələb olunan xüsusiyyətlərə uyğun olan məhsula, alınma günü sayılmamaq şərti ilə 14 gün ərzində dəyişdirə bilər.
+Əldə edilmiş məhsul istifadə olunmayıbsa və onun əmtəə görünüşü, istehlak xassələri, qablaşdırması, kassa qəbzi və ya sözügedən malın dəyərinin ödənilməsini təsdiq edən digər sənəd saxlanıbsa məhsul qaytarıla bilər. <br />
+Cehizim.az alınmış məhsulun xüsusiyyətləri istehlakçının tələblərini ödəmədiyi təqdirdə, aşağıdakı hallarda həmin məhsulun tələb olunan xüsusiyyətlərə uyğun olan məhsula, alınma günü sayılmamaq şərti ilə 14 gün ərzində dəyişdirə bilər.
+<br />
+Bu bölmədə qeyd olunan məlumatlar Azərbaycan Respublikasının “İstehlakçıların hüquqlarının müdafiəsi haqqında” qanunun müvafiq bəndlərinə əsasən hazırlanmışdır.
+ </p>
                 </FaqDropdown>
 
           

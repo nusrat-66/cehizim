@@ -493,7 +493,7 @@ const productPriceCalc=(product)=>{
 
                          <div className="istifadeci">
                           <input onChange={(e)=>setShertler(e.target.checked)} className="istifadeci__input" id="ist" required  type="checkbox" />
-                        <label htmlFor="ist"> <a className="istShertleri" href="/sertler" target="_blank">İstifadəçi şərtləri</a> ilə tanış oldum</label>
+                        <label htmlFor="ist"> <a className="istShertleri" href="/razilasma" target="_blank">İstifadəçi şərtləri </a> ilə tanış oldum</label>
                          </div>
                         <button type="submit"  id="w-node-_7f9fcd86-c814-4d8f-5549-60d08018fc84-a834c1dd"   className="sum-button w-button">Sİfarİşİ tamamla </button>
                     </div>

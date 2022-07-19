@@ -8,11 +8,13 @@ export default function WarrantyComp() {
                 <h3 className="heading-9">Zəmanət</h3>
  
                  <FaqDropdown title={"Zəmanət"}>
-                <p>Bütün məhsullara rəsmi olaraq 30 ay zəmanət verilir.</p>
+                <p>-Məhsullara rəsmi olaraq 36 aya qədər zəmanət verilir.</p>
                 </FaqDropdown>
 
                 <FaqDropdown title={"Zəmanət verilməyən hallar"}>
-                <p>İstismar, saxlama,daşınma,montaj qaydaları pozulduqda (sökülü halda çatdırıldıqda) istehsalçı tərəfindən zəmanət verilmir.</p>
+                <p>İstismar, saxlama, daşınma, montaj qaydaları pozulduqda (sökülmüş halda çatdırıldıqda) istehsalçı tərəfindən zəmanət verilmir. <br />
+Məhsulun alınma tarixinin qəbul edilməsi üçün zəmanət müddəti ərzində zəmanət kartı, təhvil-təslim aktı, çek, qaimə-faktura və bənzəri sənədlər təqdim edildiyi təqdirdə zəmanət verilən malla bağlı zəmanət qüvvədədir. Sənədlər natamam olduğu təqdirdə şirkətin zəmanət xidməti göstərməkdən imtina etmək hüququ vardır.
+.</p>
                 </FaqDropdown>
                  <FaqDropdown title={"Zəmanətin qüvvədə olmadığı hallar"}>
                 <p>Mebelin alınma tarixinin qəbul edilməsi üçün zəmanət müddəti ərzində zəmanət kartı, təhvil-təslim aktı, çek, qaimə-faktura və bənzəri sənədlər təqdim edildiyi təqdirdə zəmanət verilən malla bağlı zəmanət qüvvədədir. Sənədlər natamam olduğu təqdirdə şirkətin zəmanət xidməti göstərməkdən imtina etmək hüququ vardır.</p>

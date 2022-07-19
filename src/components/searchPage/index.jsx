@@ -84,9 +84,14 @@ const params=useParams()
                         </div>
                     </div>
                 </div>
-                <div className="w-layout-grid sidebar-layout-grid">
-                     <div id="w-node-ba7b83b4-baa9-009f-e5d0-16296e3e3744-fc9d8ccc" className="left-side">
-                        <div className="left-slide-h">
+                <div className="w-layout-grid sidebar-layout-grid sidebar-layout-grid__sp">
+                     {/* <div id="w-node-ba7b83b4-baa9-009f-e5d0-16296e3e3744-fc9d8ccc" className="left-side"> */}
+
+
+
+
+
+                        {/* <div className="left-slide-h">
                             <h6 id="w-node-b9c07c25-5c4f-130a-7aac-d8bbd182763a-fc9d8ccc" className="lefts-side-h">Kateqorİyalar  </h6>
                             <a className="filter-product w-inline-block"><img src="images/filter-search.svg" loading="lazy" alt="" /></a>
                         </div>
@@ -163,10 +168,11 @@ const params=useParams()
 
 
                             </div>
-                        </div>
-                    </div>
-  
-                     <div className="w-layout-grid right-side">
+                        </div> */}
+
+
+                    {/* </div> */}
+                      <div className="w-layout-grid right-side right-side__sp">
                            {
                             Products ? Products.map((index, key) =>
                             <div id="w-node-b159fb1f-b7ac-c1a6-dc13-725622bb6de8-22bb6de8" className="product-img" key={key}>

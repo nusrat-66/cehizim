@@ -17,13 +17,7 @@ export default function Inspiration() {
         <Navbar/>
         <div className="dropdown-overlay"></div>
         <NavigationBar/>
-
-
- 
-<SearchPage/>
-
-
-
+       <SearchPage/>
         <CookieAppear/>
          <Footer/>
         </>

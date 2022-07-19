@@ -9,7 +9,12 @@ export default function AboutHeadComp() {
                 <div id="w-node-a191a1f3-72cb-0f34-1d6c-69bc34400e86-0ffe6132" className="about-txt-blck">
                     <h2 className="about-heading">Haqqımızda</h2>
                     <div className="about-container">
-                    <div className="about-desc">  Müştərilərimizə təklif etdiyimiz nağd və hissəli ödəmə imkanları ilə yanaşı, ilkin ödənişsiz və taksit kartı olmadan müqaviləli ödəniş imkanlarımızın üstünlüklərindən də istifadə edirik; Yüksək keyfiyyətli xidmətimiz, keçmişdən gələn təcrübəmiz, müştəri məmnuniyyətimiz və möhkəm quruluşumuzla Azərbaycanın hər yerindən müştərilərimizlə birlikdə böyüməyə davam edirik. Cehizim.az sizə ən yaxşı xidməti göstərmək üçün özünü daim təkmilləşdirir və inkişaf edən texnologiyaya paralel olaraq məhsul çeşidini yeniləyir və genişləndirir.  </div>
+                    <div className="about-desc">Fəaliyyətə başladığımız gündən etibarən qarşımıza qoyduğumuz bir neçə prinsip var idi: yüksək keyfiyyət, bol çeşid və sərfəli şərtlər. Bunlarla yanaşı innovasiyanı da işimizdən kənarda qoymadıq. İllərin bizə qatdığı təcrübəylə birlikdə rəqəmsallaşma yolunda iri addımlar atdıq və cehizim.az platformasını hazırladıq.
+<br />
+Cehizim.az-da hər kəs öz istədiyinə uyğun məhsul tapa bilər. Çünki vaxtaşırı yenilənən məhsul bazamızla sizə bol çeşid sözünü veririk. Yüksək keyfiyyətli xidmətimiz, müştəri məmnuniyyətimiz və möhkəm maliyyə quruluşumuzla Azərbaycanın hər yerindən müştərilərimizlə birlikdə böyüməyə davam edirik. Cehizim.az sizə ən yaxşı xidməti göstərmək üçün özünü daim təkmilləşdirir və inkişaf edən texnologiyaya paralel olaraq innovativ həlləri öz işimizdə tətbiq edirik.
+<br />
+Qiymət siyasətinə gəlincə isə, bu anlayışın da öz növbəsində müştəri məmnuniyyətinə aid olduğunu düşünürük. Keyfiyyətli və bol çeşidli məhsullar ölkəmizin dörd bir yanına çatsın deyə, satış şərtlərimizi də daim yeniləyirik. Hissə-hissə ödəniş şərtləri ilə yanaşı, həm də vaxtaşırı həyata keçirilən kampaniyalar bizim müştəri məmnuniyyəti siyasətimizi əhatə edir.
+ </div>
                     </div>
                 </div>
                 <div id="w-node-_97f3ac03-d897-1616-ae27-5404d91e242d-0ffe6132" className="about-head-img-right">

@@ -8,7 +8,7 @@ export default function FaqComp() {
                 <h3 className="heading-9">Ən çox verilən suallar</h3>
 
 <FaqDropdown title="Cehizim.az-dan hissə-hissə ödənişlə hansı şərtlərdə məhsul əldə etmək mümkündür?">
-<p> Azərbaycan Respublikasının 20 yaşdan yuxarı vətəndaşları tək şəxsiyyət vəsiqəsi ilə rəsmi iş yeri tələbi olmadan və rahat şərtlərlə istənilən mebeli hissə-hissə ödənişlə əldə edə bilərlər.</p>
+<p>-20 yaşdan yuxarı Azərbaycan Respublikasının vətəndaşları tək şəxsiyyət vəsiqəsi ilə , rəsmi iş yeri tələbi olmadan 10.000-ə qədər istənilən məhsulu hissə-hissə ödənişlə rahat şərtlərlə  əldə edə bilərlər.</p>
 </FaqDropdown>
  
 <FaqDropdown title="Hissə-hissə ödəniş zamanı hansı sənədlər tələb olunur?">
@@ -16,16 +16,31 @@ export default function FaqComp() {
 </FaqDropdown>
 
 <FaqDropdown title="Aylıq ödənişi hansı formada həyata keçirə bilərəm?">
-<p>E-manat, mümkündür</p>
+<p>-Million, E-manat, Expresspay terminalları ilə ödəniş etmək mümkündür.</p>
 </FaqDropdown>
 
-<FaqDropdown title="Çatdırılma xidməti ödənişlidir?">
-<p> Xeyr, çatdırılma xidməti ödənişsizdir.</p>
-</FaqDropdown>
+ 
  
 <FaqDropdown title="Məhsulu bəyənmədikdə geri qaytarmaq hansı müddət ərzində mümkündür?">
-<p>“İstehlakçıların hüquqlarının müdafiəsi haqqında” qanuna əsaslanaraq sizə uyğun olmayan məhsulu 14 gün ərzində geri qaytara bilərsiniz.</p>
+<p>- İstehlakçıların hüquqlarının müdafiəsi haqqında” qanuna əsaslanaraq sizə uyğun olmayan məhsulu 14 gün ərzində geri qaytara bilərsiniz.</p>
 </FaqDropdown>
+
+  
+
+<FaqDropdown title="Çatdırılma və Quraşdırılma xidməti ödənişlidir? ">
+<p>-Ödənişsizdir.</p>
+</FaqDropdown>
+
+
+
+
+
+
+<FaqDropdown title="Çatdırılma xidməti ölkənin hansı istiqamətlərində həyata keçirilir?">
+<p> Naxçıvan Muxtar Respublikası istisna olmaqla, ölkənin bütün bölgələrinə ödənişsiz çatdırılma mümkündür.</p>
+</FaqDropdown>
+
+
 
 <FaqDropdown title="Məhsulu sifariş etdikdən sonra ləğv etmək mümkündür?">
 <p>Sifarişi ləğv etmək üçün əlaqədə olduğunuz satış təmsilçisinə müraciət etməyiniz kifayətdir.</p>
@@ -39,12 +54,12 @@ export default function FaqComp() {
 <p>Kreditin maksimal məbləği 10 000 AZN təşkil edir.</p>
 </FaqDropdown>
  
-<FaqDropdown title="Kredit hansı müddətə verilir?">
-<p>Kredit müddəti 3 aydan 18 aya kimidir.</p>
+<FaqDropdown title="Hissə-hissə ödəniş hansı müddətə verilir?">
+<p>Müddət 3 aydan 18 aya kimidir.</p>
 </FaqDropdown>
 
-<FaqDropdown title="Kredit hansı şirkətdə rəsmiləşdirilir?">
-<p>Cehizim.az-ın kredit üzrə tərəfdaşı Ferrum Capital-dır.</p>
+<FaqDropdown title="Rəsmiləşmə hansı şirkət tərəfindən həyata keçirilir?">
+<p>Cehizim.az-ın rəsmi tərəfdaşı Ferrum Capital-dır.</p>
 </FaqDropdown>
 
 <FaqDropdown title="Krediti almaq üçün şirkətə müraciət etmək lazımdırmı?">

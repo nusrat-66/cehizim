@@ -11,6 +11,15 @@
     margin-top: 85px !important;
 }
 
+.privacy__textWrapper{
+    display: flex;
+}
+.privacy__number{
+    margin-right: 15px;
+}
+
+.privacy__header{
+ }
 .trashbin-icon {
     width: 41px;
     display: flex;
