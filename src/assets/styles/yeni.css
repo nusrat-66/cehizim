@@ -7,6 +7,27 @@
     object-fit: initial;
     height: 250px;
 }
+
+.profilWrapper{
+    position: relative;
+
+}
+
+.profilNotification{
+    position: absolute;
+    top: -3px;
+    right: 18px;
+    background-color:#922c07 ;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    
+}
 .mt-navbar{
     margin-top: 85px !important;
 }

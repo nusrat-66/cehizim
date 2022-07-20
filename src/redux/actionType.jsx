@@ -36,3 +36,4 @@ export const GET_CATEGORIES = 'GET_CATEGORIES'
 export const CREDIT = 'credit';
 export const INCASH = 'INCASH';
 
+export const GET_NOTIFICATION="GET_NOTIFICATION"

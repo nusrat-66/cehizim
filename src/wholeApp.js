@@ -19,7 +19,7 @@ import CampaignsAlot from './Pages/Campaigns/Alot/index'
 import Checkout from './Pages/Checkout/index';
 import { useDispatch } from 'react-redux';
 import {takeItemsFromStorage, takeWishlistFromStorage, getCategories} from "./redux/actions"
-import {login} from "./redux/actions"
+import {login, getNotification} from "./redux/actions"
 import jwt_decode from "jwt-decode";
 import axios from "axios"
 import SearchPage from "./Pages/searchPage"
@@ -31,11 +31,11 @@ import Newest from "./components/Additional/Newest/index"
 import Privacy from "./components/privacy"
 import Policy from "./components/policy"
 import Razilasma from "./Pages/razilasma"
-
+import {useSelector} from "react-redux"
 
 
 function WholeApp() {
-  
+  const {loginReducer}=useSelector((state)=>state)
        const dispatch=useDispatch()
     useEffect(() => {
       const stateFromLocal=localStorage.getItem("bucket")
@@ -48,11 +48,11 @@ function WholeApp() {
      }
     }, [])
   
+
 useEffect(() => {
   dispatch(getCategories())
  }, [])
-  
-
+   
      useEffect(() => {
       let loginDatas=null
       var local_token = localStorage.getItem('token');
@@ -88,12 +88,26 @@ useEffect(() => {
                dispatch(login({
            id:loginDatas.id, phoneNumber: loginDatas.phoneNumber, customerId:data.data.id, fullname:`${loginDatas.name} ${loginDatas.surName}`
                 }))
- 
-          })
+           })
       }
    
   },
   []);
+
+useEffect(() => {
+  if(loginReducer.logged){
+    console.log(loginReducer.logged, `loginReducer.logged`);
+    
+dispatch(getNotification({
+  "skip": 0,
+  "take": 100,
+  "destinationUserId": loginReducer.id
+}))
+  }
+ }, [loginReducer.logged])
+
+
+
 
     return (
      <BrowserRouter>

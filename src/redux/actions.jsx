@@ -122,7 +122,10 @@ export const takeWishlistFromApi = () => ({
     payload:categories
     });
 
- 
+    const getNotificationAction = (noteArray) => ({
+      type: types.GET_NOTIFICATION,
+      payload:noteArray
+      });
 
  
   export const getCategories = () => {
@@ -140,6 +143,24 @@ export const takeWishlistFromApi = () => ({
    }
   }
   
+
+
+  export const getNotification = (body) => {
+    return function (dispatch){
+ 
+    
+    
+    axios.post("https://apis.digimall.az/api/Cehizim/GetCustomerNotifications", body,  {headers: {
+      'Content-Type': 'application/json',
+      'api-key' : '620C471E-05CC-4D90-9817-B7A3EED57E1B',
+      'Authorization' : `Bearer ${localStorage.getItem('token')}`
+  }}).then( function(response) {
+          dispatch(getNotificationAction(response.data));
+    });
+   }
+  }
+
+
 
 
 

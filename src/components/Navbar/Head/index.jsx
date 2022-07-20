@@ -12,11 +12,20 @@ import axios from 'axios';
   const SearchinputRef = useRef();
   const navigate = useNavigate();
 const params=useParams()
-
-const {buckets}=useSelector(state=>state)
+const {buckets, notification}=useSelector(state=>state)
 const {wishList}=useSelector(state=>state)
 
 
+
+const notiCount=notification.reduce(
+  (previousValue, currentValue) => {
+    if(!currentValue.view){
+     return previousValue + 1
+  }
+    },
+  0
+)
+console.log(notiCount, 'notiCounttt');
    useEffect(() => {
     (SearchBar) ? SearchinputRef.current.focus() : SearchinputRef.current.blur();
   }, [SearchBar]);
@@ -94,9 +103,18 @@ navigate(`/axtarish/${value}`)
                     </svg>
                 }
               </div>
+
+              <div className="profilWrapper">
               <Link id="w-node-_51db83f9-120a-193a-30c9-30ab9ebaa39e-9ebaa395" to={publicLinks.login} className="profile wh-24 gap-r-24 w-inline-block">
                 <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620ab95a0f0faa2dc54c1c0c_profile.svg" loading="lazy" alt="" className="avatar" />
-              </Link>
+               </Link>
+            { notiCount &&  <div className="profilNotification">
+                {notiCount}
+               </div>}
+               </div>
+              
+
+
               <div id="w-node-_51db83f9-120a-193a-30c9-30ab9ebaa3a0-9ebaa395" onClick={openWishModal} className="love wh-24 gap-r-24 w-inline-block">
                 {
                 wishList.length>0 && 

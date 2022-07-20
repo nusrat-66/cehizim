@@ -4,7 +4,7 @@ import loginReducer from "./loginReducer";
 import wishList from "./wishList";
 import categorieReducer from "./categoriesReducer";
 import paymantType from "./paymantType"
-
+import notification from "./notification"
 
 
 export const rootReducer =  combineReducers({
@@ -12,5 +12,6 @@ export const rootReducer =  combineReducers({
     loginReducer,
     wishList,
     categorieReducer,
-    paymantType
+    paymantType,
+    notification
 })
