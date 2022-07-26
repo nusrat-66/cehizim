@@ -10,7 +10,7 @@ import axios from "axios";
 import NotificationIcon from "../../assets/images/notification.svg";
 import CityField from "../citydata.json";
 import { useDispatch } from "react-redux";
-import { login, unLog } from "../../redux/actions";
+import { login, unLog, getNotification } from "../../redux/actions";
 import ChangePassword from "./changePassword";
 import agent from "../../api/agent";
 import { useSelector } from "react-redux";
@@ -31,6 +31,7 @@ const ProfileComp = () => {
   const [unvanlar, setUnvanlar] = useState([]);
   const [sifarisler, setSifarisler] = useState(false);
   const { customerId } = useSelector((state) => state.loginReducer);
+  const usIdd = useSelector((state) => state.loginReducer.id);
   const [Noti, setNoti] = useState();
   useEffect(async () => {
     if (customerId) {
@@ -129,11 +130,23 @@ const ProfileComp = () => {
       setNoti(Noti.filter(item => item.id !== id))
     }
     function readNotification(id, event) {
+
+      dispatch(getNotification({
+        "skip": 0,
+        "take": 100,
+        "destinationUserId": usIdd
+    }))
+
+
       var tmp__ = Noti.findIndex(item => item.id === id);
       event.currentTarget.className = "notifi-list-item-read"
       agent.UserNotifications.read(Noti[tmp__]["id"]);
+
+
+
+ 
     }
-  return (
+   return (
     <div className="profile-sec wf-section">
       {preloader ? (
         <div id="preloader" style={preLoaderStyle} className="sc-AykKC ceHfpt">
@@ -588,7 +601,7 @@ const ProfileComp = () => {
                         </div>
                         <div className="notifi-cont-div">
                           <h6 className="notifi-heading">{`${index.title}`}</h6>
-                          <div className="notifi-content-text read" dangerouslySetInnerHTML={{__html: decode(index.description)}}></div>
+                       {index.description &&  <div className="notifi-content-text read" dangerouslySetInnerHTML={{__html: decode(index.description)}}></div>}
                         </div>
                         <img src={CloseNotificationIcon} onClick={()=> {removeNotification(index.key, index.id)}} className="cross-notifi-button" />
                       </li>

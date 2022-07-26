@@ -9,24 +9,30 @@ import axios from 'axios';
   const [MenuMobile, setMenuMobile] = useState(false);
   const [ActiveSubCat, setActiveSubCat] = useState();
   const [SearchBar, setSearchBar] = useState(false);
+  const [notificationCount, setNotification] = useState(false);
   const SearchinputRef = useRef();
-  const navigate = useNavigate();
+ const navigate = useNavigate();
 const params=useParams()
 const {buckets, notification}=useSelector(state=>state)
 const {wishList}=useSelector(state=>state)
 
+useEffect(() => {
+   let notiCount=0
 
-
-const notiCount=notification.reduce(
-  (previousValue, currentValue) => {
-    if(!currentValue.view){
-     return previousValue + 1
+  
+notification.forEach((note)=>{
+  if(!note.view){
+    notiCount++
   }
-    },
-  0
-)
-console.log(notiCount, 'notiCounttt');
-   useEffect(() => {
+})
+
+ setNotification(notiCount)
+ 
+}, [notification])
+
+
+
+    useEffect(() => {
     (SearchBar) ? SearchinputRef.current.focus() : SearchinputRef.current.blur();
   }, [SearchBar]);
 
@@ -53,6 +59,11 @@ navigate(`/axtarish/${value}`)
  useEffect(() => {
   setMenuMobile(false)
 }, [params])
+
+{
+  console.log(notificationCount, 'notificationCount 555');
+}
+
 
   useEffect(() => {
       axios({
@@ -108,8 +119,8 @@ navigate(`/axtarish/${value}`)
               <Link id="w-node-_51db83f9-120a-193a-30c9-30ab9ebaa39e-9ebaa395" to={publicLinks.login} className="profile wh-24 gap-r-24 w-inline-block">
                 <img src="https://assets.website-files.com/620a985e7541fc8c1ca5ea83/620ab95a0f0faa2dc54c1c0c_profile.svg" loading="lazy" alt="" className="avatar" />
                </Link>
-            { notiCount &&  <div className="profilNotification">
-                {notiCount}
+             { notificationCount>0  &&  <div className="profilNotification">
+                {notificationCount}
                </div>}
                </div>
               
