@@ -567,29 +567,7 @@ const ProfileComp = () => {
                 </>
               )}
 
-              {/* <div
-                className={
-                  orderTab === "active"
-                    ? "order-block-content"
-                    : "disable-element-cs"
-                }
-              >
-                <div className="order-info-list">
-                  <div className="non-elem-denter">Məlumat yoxdur</div>
-                </div>
-              </div> */}
-              {/* <div
-                className={
-                  orderTab === "completed"
-                    ? "order-block-content"
-                    : "disable-element-cs"
-                }
-              >
-                <div className="order-info-list">
-                  <div className="non-elem-denter">Məlumat yoxdur</div>
-                </div>
-              </div> */}
-            </div>
+             </div>
             <div data-w-tab="notifi" className={tab === "notifi" ? "w--tab-active" : "notifi-cont w-tab-pane"}>
               <div className="notifi-div">
                 <ul role="list" className="notifi-list">
